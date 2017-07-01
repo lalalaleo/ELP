@@ -1,0 +1,19 @@
+{
+  "name": "elp",
+  "version": "1.0.0",
+  "description": "Enterprise learning platform Web，企业学习平台网页端",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalalaleo/ELP_Web.git"
+  },
+  "author": "Leo.Hu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lalalaleo/ELP_Web/issues"
+  },
+  "homepage": "https://github.com/lalalaleo/ELP_Web#readme"
+}
