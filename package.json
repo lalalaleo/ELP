@@ -1,10 +1,11 @@
 {
   "private": true,
   "entry": {
-    "index": "./src/index.js"
+    "index": "./src/routes/login/index.js"
   },
   "dependencies": {
     "antd": "^2.1.0",
+    "dva": "^1.2.1",
     "express": "^4.15.3",
     "jquery": "^3.2.1",
     "react": "^15.1.0",
