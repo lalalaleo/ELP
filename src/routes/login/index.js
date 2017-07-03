@@ -7,16 +7,22 @@ import { Button, Row, Form, Input } from 'antd'
 
 function Login(){
     return(
-        <div className={styles.form}>
+        <div className="login">
+            <div className="logo">
+                <img src="../public/logo.png"/>
+                <span>Enterprise learning platform</span>
+            </div>
             <Input size="large"  placeholder="Username" />
             <Input size="large" type="password"  placeholder="Password" />
-            <Button type="primary" size="large" >
-                Sign in
-            </Button>
-            <p>
-                <span>Username：guest</span>
-                <span>Password：guest</span>
-            </p>
+            <Row>
+                <Button type="primary" size="large" >
+                    Sign in
+                </Button>
+                {/*<p>
+                    <span>Username：guest</span>
+                    <span>Password：guest</span>
+                </p>*/}
+            </Row>
         </div>
     );
 }

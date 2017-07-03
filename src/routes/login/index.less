@@ -1,21 +1,26 @@
-.form {
+.login {
   position: absolute;
   top: 50%;
   left: 50%;
   margin: -160px 0 0 -160px;
   width: 320px;
-  height: 320px;
+  height: 380px;
   padding: 36px;
   box-shadow: 0 0 100px rgba(0,0,0,.08);
 
+  input {
+      margin: 10px 0;
+  }
+
   button {
     width: 100%;
+    margin: 10px 0;
   }
 
   p {
     color: rgb(204, 204, 204);
     text-align: center;
-    margin-top: 16px;
+    margin-top: 6px;
 
     span {
       &:first-child {
@@ -24,11 +29,27 @@
     }
   }
 }
-.ant-spin-container,
-.ant-spin-nested-loading {
-  height: 100%;
-}
 
+.logo {
+  text-align: center;
+//   height: 80px;
+  line-height: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+
+  img {
+    height: 100px;
+    display: inline-block;
+  }
+
+  span {
+      display: inline-block;
+    vertical-align: text-bottom;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+}
 
 html, body, #root {
   height: 100%;
