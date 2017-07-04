@@ -38,14 +38,14 @@ function Header(){
     );
 }
 
-function Tab(){
+function SegementCtrl(){
     return (
-        <Row type="flex" justify="center" align="middle" className="tab">
-            <Row type="flex" justify="center" align="middle" className="tabbar">
+        <Row type="flex" justify="center" align="middle" className="segementCtrl">
+            <Row type="flex" justify="center" align="middle" className="segementCtrlBar">
                 <ButtonGroup>
-                    <Button type="primary" >正在学习</Button>
-                    <Button type="primary" ghost>推荐课程</Button>
-                    <Button type="primary" ghost>全部课程</Button>
+                    <Button size="large" type="primary" >正在学习</Button>
+                    <Button size="large" type="primary" ghost>推荐课程</Button>
+                    <Button size="large" type="primary" ghost>全部课程</Button>
                 </ButtonGroup>
             </Row>
         </Row>
@@ -56,7 +56,7 @@ function App(){
     return (
         <div>
             <Header />
-            <Tab />
+            <SegementCtrl />
         </div>
     );
 }
