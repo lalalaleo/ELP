@@ -18,10 +18,10 @@ function Login(){
                 <Button type="primary" size="large" >
                     Sign in
                 </Button>
-                {/*<p>
+                <p>
                     <span>Username：guest</span>
                     <span>Password：guest</span>
-                </p>*/}
+                </p>
             </Row>
         </div>
     );
