@@ -2,8 +2,12 @@ import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './header.less'
-import {  Row, Col,  Input, Button, Icon } from 'antd'
+import {  Row, Col,  Input, Button, Icon, Tabs  } from 'antd'
 const InputGroup = Input.Group;
+const TabPane = Tabs.TabPane;
+function callback(key) {
+  console.log(key);
+}
 
 function Header(){
     return (
@@ -35,12 +39,16 @@ function Header(){
     );
 }
 
-function Tab(){
+function TabBar(){
     return (
-        <Row className="tab" >
-
+        <Row className="tab" type="flex" justify="start" >
+            <Tabs defaultActiveKey="1" onChange={callback}>
+                <TabPane tab="正在学习" key="1">选项卡一内容</TabPane>
+                <TabPane tab="推荐课程" key="2">选项卡二内容</TabPane>
+                <TabPane tab="全部课程" key="3">选项卡三内容</TabPane>
+            </Tabs>
         </Row>
     );
 }
 
-ReactDOM.render(<Header />,document.getElementById("root"));
+ReactDOM.render(<TabBar />,document.getElementById("root"));
