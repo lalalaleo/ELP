@@ -1,7 +1,7 @@
 {
   "private": true,
   "entry": {
-    "index": "./src/routes/login/index.js"
+    "index": "./src/components/layout/header.js"
   },
   "dependencies": {
     "antd": "^2.1.0",
