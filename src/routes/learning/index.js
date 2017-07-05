@@ -13,6 +13,12 @@ function Learning(){
                     <HistoryLi />
                     <HistoryLi />
                     <HistoryLi />
+                    <HistoryLi />
+                    <HistoryLi />
+                    <HistoryLi />
+                    <HistoryLi />
+                    <HistoryLi />
+                    <HistoryLi />
                     <Timeline.Item className="end"><center>没有了哦~~~~( •̀ ω •́ )✧</center></Timeline.Item>
                 </Timeline>
             </Col>
@@ -21,14 +27,18 @@ function Learning(){
                     <Row className="title">
                         <center><span>大家都在学</span></center>
                     </Row>
-                    <Row >
-                        <ClassTag {...'React'} />
-                        <ClassTag {...'React'} />
-                        <ClassTag {...'React'} />
-                        <ClassTag {...'React'} />
-                        <ClassTag {...'React'} />
-                        <ClassTag {...'React'} />
-                        <ClassTag {...'React'} />
+                    <Row type="flex" justify="center">
+                        <ClassTag classID='react' classLink='http://www.baidu.com' />
+                        <ClassTag classID='react-dom' />
+                        <ClassTag classID='webpack' />
+                        <ClassTag classID='react-redux' />
+                        <ClassTag classID='react-route' />
+                        <ClassTag classID='react-server' />
+                        <ClassTag classID='react-native' />
+                        <ClassTag classID='express' />
+                        <ClassTag classID='atool-build' />
+                        <ClassTag classID='jquery' />
+                        <ClassTag classID='echarts' />
                     </Row>
                 </Col>
             </Col>
@@ -50,7 +60,7 @@ function HistoryLi(){
                 </Row>
                 <Row className="content">
                     <Col span={16}>上次看到：1分钟</Col>
-                    <Col span={8}><a>继续观看</a></Col>
+                    <Col span={8}><a>继续学习</a></Col>
                 </Row>
                 <Row className="divide"></Row>
             </Col>
@@ -63,9 +73,9 @@ function HistoryLi(){
     );
 }
 
-function ClassTag({classID}){
+function ClassTag({classID,classLink}){
     return (
-        <Tag color="#2db7f5">{classID}</Tag>
+        <Tag color="blue" className="classTag"><a href={classLink}>{classID}</a></Tag>
     );
 }
 
