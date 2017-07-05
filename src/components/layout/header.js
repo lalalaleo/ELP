@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import styles from './header.less'
 import {  Row, Col,  Input, Button, Icon  } from 'antd'
 
-const InputGroup = Input.Group;
-const ButtonGroup = Button.Group;
+const InputGroup = Input.Group
+const ButtonGroup = Button.Group
 
 function Header(){
     return (
@@ -35,13 +35,13 @@ function Header(){
                 </Col>
             </Row>
         </Row>
-    );
+    )
 }
 
-function SegementCtrl(){
+function SegmentCtrl(){
     return (
-        <Row type="flex" justify="center" align="middle" className="segementCtrl">
-            <Row type="flex" justify="center" align="middle" className="segementCtrlBar">
+        <Row type="flex" justify="center" align="middle" className="segmentCtrl">
+            <Row type="flex" justify="center" align="middle" className="segmentCtrlBar">
                 <ButtonGroup>
                     <Button size="large" type="primary" >正在学习</Button>
                     <Button size="large" type="primary" ghost>推荐课程</Button>
@@ -49,5 +49,7 @@ function SegementCtrl(){
                 </ButtonGroup>
             </Row>
         </Row>
-    );
+    )
 }
+
+export default { Header,SegmentCtrl }
