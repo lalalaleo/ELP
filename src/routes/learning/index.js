@@ -8,8 +8,6 @@ function Learning(){
     return (
         <Row type="flex" justify="center" align="top" id="learningBox">
             <Col span={16} className="history">
-                {/*<HistoryLi />
-                <HistoryLi />*/}
                 <Timeline className="timeLine">
                     <HistoryLi />
                     <HistoryLi />
@@ -18,7 +16,9 @@ function Learning(){
                     <Timeline.Item className="end"><center>没有了哦~~~~( •̀ ω •́ )✧</center></Timeline.Item>
                 </Timeline>
             </Col>
-            <Col span={8} className="hotTags"></Col>
+            <Col span={8} className="hotTags">
+                
+            </Col>
         </Row>
     );
 }
@@ -26,11 +26,14 @@ function Learning(){
 function HistoryLi(){
     return(
         <Timeline.Item className="historyLi">
-            <Col span={4} className="time">07-01</Col>
+            <Col span={4} className="time">2017-07-01</Col>
             <Col span={6} className="cover"><img /></Col>
             <Col span={13} className="info">
                 <Row className="title">
                     <span>React开发教程：从入门到转行</span>
+                </Row>
+                <Row className="desc">
+                    <span>退学第一课：环境安装</span>
                 </Row>
                 <Row className="content">
                     <Col span={16}>上次看到：1分钟</Col>
@@ -39,7 +42,7 @@ function HistoryLi(){
                 <Row className="divide"></Row>
             </Col>
             <Col span={1}>
-                <Row type="flex" justify="end" align="middle"className="delete">
+                <Row type="flex" justify="center" align="middle"className="delete">
                     <Icon type="delete" size="large" />
                 </Row>
             </Col>
