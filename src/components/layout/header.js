@@ -1,8 +1,8 @@
-import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './header.less'
 import {  Row, Col,  Input, Button, Icon  } from 'antd'
+
 const InputGroup = Input.Group;
 const ButtonGroup = Button.Group;
 
@@ -51,13 +51,3 @@ function SegementCtrl(){
         </Row>
     );
 }
-
-function App(){
-    return (
-        <div>
-            <Header />
-            <SegementCtrl />
-        </div>
-    );
-}
-ReactDOM.render(<App />,document.getElementById("root"));
