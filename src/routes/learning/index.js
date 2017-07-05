@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './index.less';
 import { Header, SegmentCtrl } from '../../components/layout/header';
-import {  Row, Col, Timeline, Icon  } from 'antd'
+import {  Row, Col, Timeline, Icon, Tag  } from 'antd'
 
 function Learning(){
     return (
@@ -16,8 +16,21 @@ function Learning(){
                     <Timeline.Item className="end"><center>没有了哦~~~~( •̀ ω •́ )✧</center></Timeline.Item>
                 </Timeline>
             </Col>
-            <Col span={8} className="hotTags">
-                
+            <Col span={8} className="hot">
+                <Col className="hotClasses">
+                    <Row className="title">
+                        <center><span>大家都在学</span></center>
+                    </Row>
+                    <Row >
+                        <ClassTag {...'React'} />
+                        <ClassTag {...'React'} />
+                        <ClassTag {...'React'} />
+                        <ClassTag {...'React'} />
+                        <ClassTag {...'React'} />
+                        <ClassTag {...'React'} />
+                        <ClassTag {...'React'} />
+                    </Row>
+                </Col>
             </Col>
         </Row>
     );
@@ -47,6 +60,12 @@ function HistoryLi(){
                 </Row>
             </Col>
         </Timeline.Item>
+    );
+}
+
+function ClassTag({classID}){
+    return (
+        <Tag color="#2db7f5">{classID}</Tag>
     );
 }
 
