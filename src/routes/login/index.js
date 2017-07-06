@@ -23,4 +23,4 @@ function Login(){
 }
 
 // ReactDOM.render(<Login />,document.getElementById('#root'));
-export default Login;
+export default { Login };

@@ -16,4 +16,5 @@ function Index(){
     );
 }
 
-ReactDOM.render(<Index />,document.getElementById('root'));
+export default { Index };
+// ReactDOM.render(<Index />,document.getElementById('root'));

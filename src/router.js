@@ -3,23 +3,25 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter, Router, Route, Link, IndexRoute } from 'react-router-dom'
 import { Login } from './routes/login/index'
+import { Index } from './routes/index/index'
+import { Header } from './components/layout/header.js';
 
-const App = function(){
-    return (
-      <div>
-        <h1>App</h1>
-        <ul>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/inbox">Inbox</Link></li>
-        </ul>
-      </div>
-    );
-}
+// ReactDOM.render((
+//   <HashRouter>
+//     <Route path="/" component={ Login }>
+//         <IndexRoute component={ Login } />
+//         {/*<Route path="index" component={Index} />*/}
+//     </Route>
+//   </HashRouter>
+// ), document.getElementById("#root"))
 
-ReactDOM.render((
-  <HashRouter>
-    <Route path="/" component={Login}>
-        {/*<IndexRoute component={Login} />*/}
-    </Route>
-  </HashRouter>
-), document.body)
+
+// function App(){
+//     return (
+//         <div>
+//             <Login />
+//         </div>
+//     );
+// }
+
+ReactDOM.render(<Login />,document.getElementById('root'));
