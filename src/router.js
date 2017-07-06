@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter,Route, Switch,BrowserRouter } from 'react-router-dom'
 import { Login } from './routes/login/index'
-import { Index } from './routes/index/index'
+import { HomePage } from './routes/index/index'
 import { Header } from './components/layout/header.js';
 // import './themes/index.less'
 
@@ -27,7 +27,7 @@ ReactDOM.render((
     >
     <div id="box">
       <Route exact path="/" component={ Login } />
-      <Route exact path="/index" component={ Index } />
+      <Route path="/index" component={ HomePage } />
     </div>
   </BrowserRouter>
 ),document.getElementById("root"));

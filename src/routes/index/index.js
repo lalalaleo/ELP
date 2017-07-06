@@ -5,7 +5,7 @@ import { Header } from '../../components/layout/header.js';
 import { Learning } from '../learning/index.js';
 import {  Row  } from 'antd'
 
-function Index(){
+function HomePage(){
     return(
         <div>
             <Header type='index' />
@@ -16,5 +16,5 @@ function Index(){
     );
 }
 
-export default { Index };
+export default { HomePage };
 // ReactDOM.render(<Index />,document.getElementById('root'));
