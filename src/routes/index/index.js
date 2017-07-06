@@ -10,7 +10,7 @@ function Index(){
         <div>
             <Header type='index' />
             <Row type="flex" justify="center" align="top" id="content">
-                {/*<Learning />*/}
+                <Learning />
             </Row>
         </div>
     );
