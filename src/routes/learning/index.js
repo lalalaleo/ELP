@@ -5,9 +5,9 @@ import {  Row, Col, Timeline, Icon, Tag  } from 'antd'
 
 function Learning(){
     return (
-        <Row type="flex" justify="center" align="top" id="learningBox">
-            <Col span={16} className="history">
-                <Timeline className="timeLine">
+        <Row type="flex" justify="center" align="top" className={styles.learningBox}>
+            <Col span={16} className={styles.history}>
+                <Timeline className={styles.timeLine}>
                     <HistoryLi />
                     <HistoryLi />
                     <HistoryLi />
@@ -18,12 +18,12 @@ function Learning(){
                     <HistoryLi />
                     <HistoryLi />
                     <HistoryLi />
-                    <Timeline.Item className="end"><center>没有了哦~~~~( •̀ ω •́ )✧</center></Timeline.Item>
+                    <Timeline.Item className={styles.end}><center>没有了哦~~~~( •̀ ω •́ )✧</center></Timeline.Item>
                 </Timeline>
             </Col>
-            <Col span={8} className="hot">
-                <Col className="hotClasses">
-                    <Row className="title">
+            <Col span={8} className={styles.hot}>
+                <Col className={styles.hotClasses}>
+                    <Row className={styles.title}>
                         <center><span>大家都在学</span></center>
                     </Row>
                     <Row type="flex" justify="center">
@@ -47,24 +47,24 @@ function Learning(){
 
 function HistoryLi(){
     return(
-        <Timeline.Item className="historyLi">
-            <Col span={4} className="time">2017-07-01</Col>
-            <Col span={6} className="cover"><img /></Col>
-            <Col span={13} className="info">
-                <Row className="title">
+        <Timeline.Item className={styles.historyLi}>
+            <Col span={4} className={styles.time}>2017-07-01</Col>
+            <Col span={6} className={styles.cover}><img /></Col>
+            <Col span={13} className={styles.info}>
+                <Row className={styles.title}>
                     <span>React开发教程：从入门到转行</span>
                 </Row>
-                <Row className="desc">
+                <Row className={styles.desc}>
                     <span>退学第一课：环境安装</span>
                 </Row>
-                <Row className="content">
+                <Row className={styles.content}>
                     <Col span={16}>上次看到：1分钟</Col>
                     <Col span={8}><a>继续学习</a></Col>
                 </Row>
-                <Row className="divide"></Row>
+                <Row className={styles.divide}></Row>
             </Col>
             <Col span={1}>
-                <Row type="flex" justify="center" align="middle"className="delete">
+                <Row type="flex" justify="center" align="middle"className={styles.delete}>
                     <Icon type="delete" size="large" />
                 </Row>
             </Col>
@@ -74,7 +74,7 @@ function HistoryLi(){
 
 function ClassTag({classID,classLink}){
     return (
-        <Tag color="blue" className="classTag"><a href={classLink}>{classID}</a></Tag>
+        <Tag color="blue" className={styles.classTag}><a href={classLink}>{classID}</a></Tag>
     );
 }
 

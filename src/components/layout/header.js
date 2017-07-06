@@ -9,18 +9,18 @@ const RadioGroup = Radio.Group;
 
 function IndexToolBar(){
     return (
-        <Row type="flex" justify="center" align="middle" className="indexToolBar">
-            <Row type="flex" justify="space-around" align="middle" className="toolBar">
+        <Row type="flex" justify="center" align="middle" className={styles.indexToolBar}>
+            <Row type="flex" justify="space-around" align="middle" className={styles.toolBar}>
                 {/*logo、标题*/}
                 <Col span="6">
-                    <Row className="logo" type="flex" justify="start" align="middle">
-                        <img className="logo" src="../public/elp_logo.png" />
+                    <Row className={styles.header_logo} type="flex" justify="start" align="middle">
+                        <img src="elp_logo.png" />
                         <span>E L P</span>
                     </Row>
                 </Col>
                 {/*搜索框*/}
                 <Col span="8">
-                    <InputGroup className="search">
+                    <InputGroup className={styles.search}>
                         <Input size="large" placeholder="搜索"></Input>
                         <Button type="primary" size="large"><Icon type="search" /></Button>
                     </InputGroup>
@@ -28,9 +28,9 @@ function IndexToolBar(){
                 {/*消息、个人信息*/}
                 <Col span="10">
                     <Row  type="flex" justify="end" align="middle">
-                        <Button  className="message" shape="circle" size="large"><Icon type="message" /></Button>
-                        <Button  className="avatar" shape="circle" size="large">
-                            <img  src="../public/test_avatar.png"></img>
+                        <Button  className={styles.message} shape="circle" size="large"><Icon type="message" /></Button>
+                        <Button  className={styles.avatar} shape="circle" size="large">
+                            <img  src="test_avatar.png"></img>
                         </Button>
                     </Row>
                 </Col>
@@ -41,8 +41,8 @@ function IndexToolBar(){
 
 function SegmentCtrl(){
     return (
-        <Row type="flex" justify="center" align="middle" className="segmentCtrl">
-            <Row type="flex" justify="center" align="middle" className="segmentCtrlBar">
+        <Row type="flex" justify="center" align="middle" className={styles.segmentCtrl}>
+            <Row type="flex" justify="center" align="middle" className={styles.segmentCtrlBar}>
                 <RadioGroup defaultValue="a" size="large">
                     <RadioButton value="a">正在学习</RadioButton>
                     <RadioButton value="b">推荐课程</RadioButton>
@@ -57,8 +57,8 @@ function Header({type}){
     if({type}.type=='index'){
         return(
             <div>
-                <div className="vhd" />
-                <div className="hd">
+                <div className={styles.vhd} />
+                <div className={styles.hd}>
                     <IndexToolBar />
                     <SegmentCtrl />
                 </div>
