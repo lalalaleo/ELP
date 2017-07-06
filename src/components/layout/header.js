@@ -6,10 +6,10 @@ import {  Row, Col,  Input, Button, Icon  } from 'antd'
 const InputGroup = Input.Group
 const ButtonGroup = Button.Group
 
-function Header(){
+function IndexToolBar(){
     return (
-        <Row type="flex" justify="center" align="middle" className="hd">
-            <Row type="flex" justify="space-around" align="middle" className="hdbar">
+        <Row type="flex" justify="center" align="middle" className="indexToolBar">
+            <Row type="flex" justify="space-around" align="middle" className="toolBar">
                 {/*logo、标题*/}
                 <Col span="6">
                     <Row className="logo" type="flex" justify="start" align="middle">
@@ -52,4 +52,14 @@ function SegmentCtrl(){
     )
 }
 
-export default { Header,SegmentCtrl }
+function Header({type}){
+    if({type}.type=='index'){
+        return(
+            <div className="hd">
+                <IndexToolBar />
+                <SegmentCtrl />
+            </div>
+        );
+    }
+}
+export default { Header };
