@@ -10,10 +10,11 @@ function Index(){
         <div>
             <Header type='index' />
             <Row type="flex" justify="center" align="top" id="content">
-                {/*<Learning />*/}
+                <Learning />
             </Row>
         </div>
     );
 }
 
-ReactDOM.render(<Index />,document.getElementById('root'));
+export default { Index };
+// ReactDOM.render(<Index />,document.getElementById('root'));

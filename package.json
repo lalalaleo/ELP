@@ -1,15 +1,18 @@
 {
   "private": true,
   "entry": {
-    "index": "./src/routes/index/index.js"
+    "index": "./src/router.js"
   },
   "dependencies": {
     "antd": "^2.1.0",
     "dva": "^1.2.1",
+    "dva-loading": "^0.2.1",
     "express": "^4.15.3",
     "jquery": "^3.2.1",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "atool-build": "^0.9.0",
