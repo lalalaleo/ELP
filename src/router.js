@@ -1,27 +1,35 @@
 import './index.html'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HashRouter, Router, Route, Link, IndexRoute } from 'react-router-dom'
+import { HashRouter,Route, Switch,BrowserRouter } from 'react-router-dom'
 import { Login } from './routes/login/index'
 import { Index } from './routes/index/index'
 import { Header } from './components/layout/header.js';
+// import './themes/index.less'
 
-// ReactDOM.render((
-//   <HashRouter>
-//     <Route path="/" component={ Login }>
-//         <IndexRoute component={ Login } />
-//         {/*<Route path="index" component={Index} />*/}
-//     </Route>
-//   </HashRouter>
-// ), document.getElementById("#root"))
+function App(){
+    return(<div >APP</div>) ;
+}
 
+function Test(){
+  return(
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  );
+}
 
-// function App(){
-//     return (
-//         <div>
-//             <Login />
-//         </div>
-//     );
-// }
+ReactDOM.render((
+  <BrowserRouter
+      basename="/"
+      forceRefresh={false}
+      keyLength={12}
+    >
+    <div id="box">
+      <Route exact path="/" component={ Login } />
+      <Route exact path="/index" component={ Index } />
+    </div>
+  </BrowserRouter>
+),document.getElementById("root"));
 
-ReactDOM.render(<Login />,document.getElementById('root'));
+// ReactDOM.render(<Index />,document.getElementById("root"));
