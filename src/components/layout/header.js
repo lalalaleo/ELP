@@ -1,15 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styles from './header.less'
-import {  Row, Col,  Input, Button, Icon  } from 'antd'
+import {  Row, Col,  Input, Button, Icon, Radio } from 'antd'
 
 const InputGroup = Input.Group
-const ButtonGroup = Button.Group
+const RadioButton = Radio.Button;
+const RadioGroup = Radio.Group;
 
-function Header(){
+function IndexToolBar(){
     return (
-        <Row type="flex" justify="center" align="middle" className="hd">
-            <Row type="flex" justify="space-around" align="middle" className="hdbar">
+        <Row type="flex" justify="center" align="middle" className="indexToolBar">
+            <Row type="flex" justify="space-around" align="middle" className="toolBar">
                 {/*logo、标题*/}
                 <Col span="6">
                     <Row className="logo" type="flex" justify="start" align="middle">
@@ -42,14 +43,27 @@ function SegmentCtrl(){
     return (
         <Row type="flex" justify="center" align="middle" className="segmentCtrl">
             <Row type="flex" justify="center" align="middle" className="segmentCtrlBar">
-                <ButtonGroup>
-                    <Button size="large" type="primary" >正在学习</Button>
-                    <Button size="large" type="primary" ghost>推荐课程</Button>
-                    <Button size="large" type="primary" ghost>全部课程</Button>
-                </ButtonGroup>
+                <RadioGroup defaultValue="a" size="large">
+                    <RadioButton value="a">正在学习</RadioButton>
+                    <RadioButton value="b">推荐课程</RadioButton>
+                    <RadioButton value="c">全部课程</RadioButton>
+                </RadioGroup>
             </Row>
         </Row>
     )
 }
 
-export default { Header,SegmentCtrl }
+function Header({type}){
+    if({type}.type=='index'){
+        return(
+            <div>
+                <div className="vhd" />
+                <div className="hd">
+                    <IndexToolBar />
+                    <SegmentCtrl />
+                </div>
+            </div>
+        );
+    }
+}
+export default { Header };
