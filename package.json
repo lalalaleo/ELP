@@ -1,7 +1,7 @@
 {
   "private": true,
   "entry": {
-    "index": "./src/routes/learning/index.js"
+    "index": "./src/routes/index/index.js"
   },
   "dependencies": {
     "antd": "^2.1.0",
