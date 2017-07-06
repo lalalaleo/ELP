@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styles from './header.less'
-import {  Row, Col,  Input, Button, Icon  } from 'antd'
+import {  Row, Col,  Input, Button, Icon } from 'antd'
 
 const InputGroup = Input.Group
 const ButtonGroup = Button.Group
@@ -55,9 +55,12 @@ function SegmentCtrl(){
 function Header({type}){
     if({type}.type=='index'){
         return(
-            <div className="hd">
-                <IndexToolBar />
-                <SegmentCtrl />
+            <div>
+                <div className="vhd" />
+                <div className="hd">
+                    <IndexToolBar />
+                    <SegmentCtrl />
+                </div>
             </div>
         );
     }
