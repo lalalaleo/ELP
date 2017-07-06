@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './index.less'
-import { Button, Row, Form, Input } from 'antd'
+import styles from './index.less';
+import { Button, Row, Form, Input } from 'antd';
 
 
 function Login(){
     return(
         <div className="login">
-            <div className="login-logo">
-                <img src="../public/logo.png"/>
+            <div className="login_logo">
+                <img src="logo.png"/>
                 <span>Enterprise learning platform</span>
             </div>
             <Input size="large"  placeholder="Username" />

@@ -1,12 +1,17 @@
-// import './index.html'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Routes } from './router'
+import dva from 'dva';
+import './themes/index.less';
 
-// function App(){
-//     return(
-//         <div id="root"></div>
-//     )
-// }
+// 1. Initialize
+const app = dva();
 
-ReactDOM.render(<Routes />,document.body);
+// 2. Plugins
+// app.use({});
+
+// 3. Model
+// app.model(require('./models/example'));
+
+// 4. Router
+app.router(require('./router'));
+
+// 5. Start
+app.start('#root');

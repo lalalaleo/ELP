@@ -13,8 +13,8 @@ function IndexToolBar(){
             <Row type="flex" justify="space-around" align="middle" className="toolBar">
                 {/*logo、标题*/}
                 <Col span="6">
-                    <Row className="logo" type="flex" justify="start" align="middle">
-                        <img className="logo" src="../public/elp_logo.png" />
+                    <Row className="header_logo" type="flex" justify="start" align="middle">
+                        <img src="elp_logo.png" />
                         <span>E L P</span>
                     </Row>
                 </Col>
@@ -30,7 +30,7 @@ function IndexToolBar(){
                     <Row  type="flex" justify="end" align="middle">
                         <Button  className="message" shape="circle" size="large"><Icon type="message" /></Button>
                         <Button  className="avatar" shape="circle" size="large">
-                            <img  src="../public/test_avatar.png"></img>
+                            <img  src="test_avatar.png"></img>
                         </Button>
                     </Row>
                 </Col>

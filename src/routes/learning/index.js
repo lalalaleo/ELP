@@ -5,7 +5,7 @@ import {  Row, Col, Timeline, Icon, Tag  } from 'antd'
 
 function Learning(){
     return (
-        <Row type="flex" justify="center" align="top" id="learningBox">
+        <Row type="flex" justify="center" align="top" className="learningBox">
             <Col span={16} className="history">
                 <Timeline className="timeLine">
                     <HistoryLi />
@@ -57,7 +57,7 @@ function HistoryLi(){
                 <Row className="desc">
                     <span>退学第一课：环境安装</span>
                 </Row>
-                <Row className="content">
+                <Row className="historyLi_content">
                     <Col span={16}>上次看到：1分钟</Col>
                     <Col span={8}><a>继续学习</a></Col>
                 </Row>

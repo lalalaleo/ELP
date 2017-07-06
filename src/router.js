@@ -1,35 +1,16 @@
-import './index.html'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { HashRouter,Route, Switch,BrowserRouter } from 'react-router-dom'
-import { Login } from './routes/login/index'
-import { HomePage } from './routes/index/index'
-import { Header } from './components/layout/header.js';
-// import './themes/index.less'
+import React from 'react';
+import { Router, Route } from 'dva/router';
+import {IndexPage} from './routes/index/index';
+import {Login} from './routes/login/index';
+import './routes/login/index.less'
 
-function App(){
-    return(<div >APP</div>) ;
-}
-
-function Test(){
-  return(
-    <div>
-      <h1>Hello World</h1>
-    </div>
+function RouterConfig({ history }) {
+  return (
+    <Router history={history}>
+      <Route path="/" component={IndexPage} />
+      <Route path="/login" component={Login} />
+    </Router>
   );
 }
 
-ReactDOM.render((
-  <BrowserRouter
-      basename="/"
-      forceRefresh={false}
-      keyLength={12}
-    >
-    <div id="box">
-      <Route exact path="/" component={ Login } />
-      <Route path="/index" component={ HomePage } />
-    </div>
-  </BrowserRouter>
-),document.getElementById("root"));
-
-// ReactDOM.render(<Index />,document.getElementById("root"));
+export default RouterConfig;
