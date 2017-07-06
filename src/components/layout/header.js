@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styles from './header.less'
-import {  Row, Col,  Input, Button, Icon } from 'antd'
+import {  Row, Col,  Input, Button, Icon, Radio } from 'antd'
 
 const InputGroup = Input.Group
-const ButtonGroup = Button.Group
+const RadioButton = Radio.Button;
+const RadioGroup = Radio.Group;
 
 function IndexToolBar(){
     return (
@@ -42,11 +43,11 @@ function SegmentCtrl(){
     return (
         <Row type="flex" justify="center" align="middle" className="segmentCtrl">
             <Row type="flex" justify="center" align="middle" className="segmentCtrlBar">
-                <ButtonGroup>
-                    <Button size="large" type="primary" >正在学习</Button>
-                    <Button size="large" type="primary" ghost>推荐课程</Button>
-                    <Button size="large" type="primary" ghost>全部课程</Button>
-                </ButtonGroup>
+                <RadioGroup defaultValue="a" size="large">
+                    <RadioButton value="a">正在学习</RadioButton>
+                    <RadioButton value="b">推荐课程</RadioButton>
+                    <RadioButton value="c">全部课程</RadioButton>
+                </RadioGroup>
             </Row>
         </Row>
     )
