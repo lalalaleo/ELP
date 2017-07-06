@@ -6,8 +6,8 @@ import { Button, Row, Form, Input } from 'antd';
 
 function Login(){
     return(
-        <div className={styles.login}>
-            <div className={styles.login_logo}>
+        <div className="login">
+            <div className="login_logo">
                 <img src="logo.png"/>
                 <span>Enterprise learning platform</span>
             </div>

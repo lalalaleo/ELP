@@ -10,7 +10,7 @@ function IndexPage(){
     return(
         <div>
             <Header type='index' />
-            <Row type="flex" justify="center" align="top" className={styles.content}>
+            <Row type="flex" justify="center" align="top" className="content">
                 <Learning />
             </Row>
         </div>
