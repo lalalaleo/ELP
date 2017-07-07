@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './index.less';
 import {  Row, Col, Timeline, Icon, Tag  } from 'antd'
-
+const Learning = React.createClass({
+    render:
 function Learning(){
     return (
         <Row type="flex" justify="center" align="top" className="learningBox">
@@ -44,6 +45,7 @@ function Learning(){
         </Row>
     );
 }
+});
 
 function HistoryLi(){
     return(

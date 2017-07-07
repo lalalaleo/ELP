@@ -1,41 +1,33 @@
 import React from 'react';
-import { Router, Route } from 'dva/router';
-import {IndexPage} from './routes/index/index';
-// import { Learning } from './routes/learning/index.js';
-import {Login} from './routes/login/index';
-import './routes/login/index.less'
+import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute } from 'dva/router';
+
+import { IndexPage } from './routes/index/index';
+import { Learning } from './routes/learning/index';
+import { Login } from './routes/login/index';
+import {Test} from './routes/test/index';
+import {ErrorPage} from './routes/404/index';
+
+const App = React.createClass({
+    render:function(){
+      window.location.href="/login";
+    }
+
+});
 
 function RouterConfig({ history }) {
-  const routes = [
-    {
-      path: '/',
-      component: IndexPage,
-      getIndexRoute (nextState, cb) {
-        require.ensure([], require => {
-          cb(null, { component: require('./routes/index/') })
-        }, 'IndexPage')
-      },
-      childRoutes: [
-        {
-          path: '/login',
-          component: Login
-          // getComponent (nextState, cb) {
-          //   require.ensure([], require => {
-          //     cb(null, require('./routes/index/'))
-          //   }, 'IndexPage')
-          // },
-        },
-      ],
-    },
-  ],
   return (
-    // <Router history={history}>
-    //   <Route path="/" component={IndexPage} >
-    //   </Route>
-    //     <Route path="/learning" component={Learning} />
-    //   <Route path="/login" component={Login} />
-    // </Router>
-    <Router history={history} routes={routes} />
+    <Router history={history}>
+      <Route path="/" component={App} />
+      <Route path="home" component={IndexPage}>
+        <IndexRoute component={Learning} />
+        <Route path="/learning" component={Learning} />
+        <Route path="test" component={Test} />
+      </Route>
+      <Route path="login" component={Login} />
+      {/*<Route path="test" component={Test} />*/}
+      <Route path="*" component={ErrorPage} />
+    </Router>
   );
 }
 

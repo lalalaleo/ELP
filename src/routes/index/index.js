@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './index.less';
 
+import styles from './index.less';
 import { Header } from '../../components/layout/header.js';
-// import { Learning } from '../learning/index.js';
+import { Learning } from '../learning/index.js';
 import {  Row  } from 'antd'
 
-function IndexPage(){
-    return(
-        <div>
-            <Header type='index' />
-            <Row type="flex" justify="center" align="top" className="content">
-            </Row>
-        </div>
-    );
-}
-
-// export default connect()(IndexPage);
+const IndexPage = React.createClass({
+    render:
+        function (){
+            return(
+                <div>
+                    <Header type='index' />
+                    <Row type="flex" justify="center" align="top" className="content">
+                        {this.props.children}
+                    </Row>
+                </div>
+            );
+        }
+});
 export default { IndexPage };
-// ReactDOM.render(<Index />,document.getElementById('root'));
