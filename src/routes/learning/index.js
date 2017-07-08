@@ -3,48 +3,47 @@ import ReactDOM from 'react-dom';
 import styles from './index.less';
 import {  Row, Col, Timeline, Icon, Tag  } from 'antd'
 const Learning = React.createClass({
-    render:
-function Learning(){
-    return (
-        <Row type="flex" justify="center" align="top" className="learningBox">
-            <Col span={16} className="history">
-                <Timeline className="timeLine">
-                    <HistoryLi />
-                    <HistoryLi />
-                    <HistoryLi />
-                    <HistoryLi />
-                    <HistoryLi />
-                    <HistoryLi />
-                    <HistoryLi />
-                    <HistoryLi />
-                    <HistoryLi />
-                    <HistoryLi />
-                    <Timeline.Item className="end"><center>没有了哦~~~~( •̀ ω •́ )✧</center></Timeline.Item>
-                </Timeline>
-            </Col>
-            <Col span={8} className="hot">
-                <Col className="hotClasses">
-                    <Row className="title">
-                        <center><span>大家都在学</span></center>
-                    </Row>
-                    <Row type="flex" justify="center">
-                        <ClassTag classID='react' classLink='http://www.baidu.com' />
-                        <ClassTag classID='react-dom' />
-                        <ClassTag classID='webpack' />
-                        <ClassTag classID='react-redux' />
-                        <ClassTag classID='react-route' />
-                        <ClassTag classID='react-server' />
-                        <ClassTag classID='react-native' />
-                        <ClassTag classID='express' />
-                        <ClassTag classID='atool-build' />
-                        <ClassTag classID='jquery' />
-                        <ClassTag classID='echarts' />
-                    </Row>
+    render: function Learning(){
+        return (
+            <Row type="flex" justify="center" align="top" className="learningBox">
+                <Col span={16} className="history">
+                    <Timeline className="timeLine">
+                        <HistoryLi />
+                        <HistoryLi />
+                        <HistoryLi />
+                        <HistoryLi />
+                        <HistoryLi />
+                        <HistoryLi />
+                        <HistoryLi />
+                        <HistoryLi />
+                        <HistoryLi />
+                        <HistoryLi />
+                        <Timeline.Item className="end"><center>没有了哦~~~~( •̀ ω •́ )✧</center></Timeline.Item>
+                    </Timeline>
                 </Col>
-            </Col>
-        </Row>
-    );
-}
+                <Col span={8} className="hot">
+                    <Col className="hotClasses">
+                        <Row className="title">
+                            <center><span>大家都在学</span></center>
+                        </Row>
+                        <Row type="flex" justify="center">
+                            <ClassTag classID='react' classLink='http://www.baidu.com' />
+                            <ClassTag classID='react-dom' />
+                            <ClassTag classID='webpack' />
+                            <ClassTag classID='react-redux' />
+                            <ClassTag classID='react-route' />
+                            <ClassTag classID='react-server' />
+                            <ClassTag classID='react-native' />
+                            <ClassTag classID='express' />
+                            <ClassTag classID='atool-build' />
+                            <ClassTag classID='jquery' />
+                            <ClassTag classID='echarts' />
+                        </Row>
+                    </Col>
+                </Col>
+            </Row>
+        );
+    }
 });
 
 function HistoryLi(){
@@ -80,4 +79,4 @@ function ClassTag({classID,classLink}){
     );
 }
 
-export default { Learning };
+export { Learning };

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './index.less';
-import { Header } from '../../components/layout/header.js';
+import { Header, IndexToolBar, SegmentCtrl } from '../../components/layout/header.js';
+import { Test } from '../test/index'
 import {  Row  } from 'antd'
 
 const IndexPage = React.createClass({
@@ -9,7 +10,10 @@ const IndexPage = React.createClass({
         function (){
             return(
                 <div>
-                    <Header type='index' />
+                    <Header>
+                            <IndexToolBar />
+                            <SegmentCtrl />
+                    </Header>
                     <Row type="flex" justify="center" align="top" className="content">
                         {this.props.children}
                     </Row>
@@ -17,4 +21,4 @@ const IndexPage = React.createClass({
             );
         }
 });
-export default { IndexPage };
+export { IndexPage };
