@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import styles from './index.less';
 import { Header } from '../../components/layout/header.js';
-import { Learning } from '../learning/index.js';
 import {  Row  } from 'antd'
 
 const IndexPage = React.createClass({

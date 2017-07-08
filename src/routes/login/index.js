@@ -8,7 +8,7 @@ function Login(){
     return(
         <div className="login">
             <div className="login_logo">
-                <img src="logo.png"/>
+                <img src="/image/logo.png" alt="logo"/>
                 <span>Enterprise learning platform</span>
             </div>
             <Input size="large"  placeholder="Username" />

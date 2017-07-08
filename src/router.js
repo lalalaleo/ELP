@@ -21,11 +21,10 @@ function RouterConfig({ history }) {
       <Route path="/" component={App} />
       <Route path="home" component={IndexPage}>
         <IndexRoute component={Learning} />
-        <Route path="/learning" component={Learning} />
+        <Route path="learning" component={Learning} />
         <Route path="test" component={Test} />
       </Route>
       <Route path="login" component={Login} />
-      {/*<Route path="test" component={Test} />*/}
       <Route path="*" component={ErrorPage} />
     </Router>
   );
