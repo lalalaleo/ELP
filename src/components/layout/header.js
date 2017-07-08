@@ -2,9 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styles from './header.less'
 import {  Row, Col,  Input, Button, Icon, Radio } from 'antd'
+
 const InputGroup = Input.Group
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
+
 const IndexToolBar = React.createClass({
     render: function (){
         return (
@@ -13,7 +15,7 @@ const IndexToolBar = React.createClass({
                     {/*logo、标题*/}
                     <Col span="6">
                         <Row className="header_logo" type="flex" justify="start" align="middle">
-                            <img src="/elp_logo.png" />
+                            <img src="/image/elp_logo.png" />
                             <span>E L P</span>
                         </Row>
                     </Col>
@@ -29,7 +31,7 @@ const IndexToolBar = React.createClass({
                         <Row  type="flex" justify="end" align="middle">
                             <Button  className="message" shape="circle" size="large"><Icon type="message" /></Button>
                             <Button  className="avatar" shape="circle" size="large">
-                                <img  src="/test_avatar.png"></img>
+                                <img  src="/image/test_avatar.png"></img>
                             </Button>
                         </Row>
                     </Col>
@@ -38,16 +40,21 @@ const IndexToolBar = React.createClass({
         )
     }
 });
-
 const SegmentCtrl = React.createClass({
+    onChange(e){
+        this.setState({
+            value: e.target.value
+        });
+        window.location.href="/home/"+e.target.value;
+    },
     render: function (){
         return (
             <Row type="flex" justify="center" align="middle" className="segmentCtrl">
                 <Row type="flex" justify="center" align="middle" className="segmentCtrlBar">
-                    <RadioGroup defaultValue="a" size="large">
-                        <RadioButton value="a">正在学习</RadioButton>
-                        <RadioButton value="b">推荐课程</RadioButton>
-                        <RadioButton value="c">全部课程</RadioButton>
+                    <RadioGroup  size="large" onChange={this.onChange}  >
+                        <RadioButton value="learning">正在学习</RadioButton>
+                        <RadioButton value="recommend">推荐课程</RadioButton>
+                        <RadioButton value="all">全部课程</RadioButton>
                     </RadioGroup>
                 </Row>
             </Row>
