@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute } from 'dva/router';
 
 import { IndexPage } from './routes/index/index';
 import { Learning } from './routes/learning/index';
+import { Recommend } from './routes/recommend/index';
 import { Login } from './routes/login/index';
 import {Test} from './routes/test/index';
 import {ErrorPage} from './routes/404/index';
@@ -22,6 +23,7 @@ function RouterConfig({ history }) {
       <Route path="home" component={IndexPage}>
         <IndexRoute component={Learning} />
         <Route path="learning" component={Learning} />
+        <Route path="recommend" component={Recommend} />
         <Route path="test" component={Test} />
       </Route>
       <Route path="login" component={Login} />
