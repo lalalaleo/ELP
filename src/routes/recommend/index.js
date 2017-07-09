@@ -33,6 +33,7 @@ const Recommend = React.createClass({
                 </div>
                 {/*热门课程*/}
                 <PopularClasses />
+                {/*学霸们*/}
                 <div className="contentBox">
                     <Row className="title"><h2>精选与推荐</h2></Row>
                     <Row>
