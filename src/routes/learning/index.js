@@ -50,7 +50,7 @@ function HistoryLi(){
     return(
         <Timeline.Item className="historyLi">
             <Col span={4} className="time">2017-07-01</Col>
-            <Col span={6} className="cover"><img /></Col>
+            <Col span={6} className="cover"><img src="/image/cover_react_blue.png" /></Col>
             <Col span={13} className="info">
                 <Row className="title">
                     <span>React开发教程：从入门到转行</span>
