@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute } from 'dva/router';
-
 import { IndexPage } from './routes/index/index';
 import { Learning } from './routes/learning/index';
 import { Recommend } from './routes/recommend/index';
