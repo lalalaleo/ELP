@@ -12,7 +12,6 @@ const IndexPage = React.createClass({
                 <div>
                     <Header>
                             <IndexToolBar />
-                            <SegmentCtrl />
                     </Header>
                     <Row type="flex" justify="center" align="top" className="content">
                         {this.props.children}

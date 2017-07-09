@@ -13,11 +13,15 @@ const IndexToolBar = React.createClass({
             <Row type="flex" justify="center" align="middle" className="indexToolBar">
                 <Row type="flex" justify="space-around" align="middle" className="toolBar">
                     {/*logo、标题*/}
-                    <Col span="6">
+                    <Col span="4">
                         <Row className="header_logo" type="flex" justify="start" align="middle">
                             <img src="/image/elp_logo.png" />
                             <span>E L P</span>
                         </Row>
+                    </Col>
+                    {/*导航*/}
+                    <Col span="8">
+                        <SegmentCtrl />
                     </Col>
                     {/*搜索框*/}
                     <Col span="8">
@@ -27,7 +31,7 @@ const IndexToolBar = React.createClass({
                         </InputGroup>
                     </Col>
                     {/*消息、个人信息*/}
-                    <Col span="10">
+                    <Col span="4">
                         <Row  type="flex" justify="end" align="middle">
                             <Button  className="message" shape="circle" size="large"><Icon type="message" /></Button>
                             <Button  className="avatar" shape="circle" size="large">

@@ -4,10 +4,6 @@ import styles from './index.less';
 import {  Row, Col, Icon, Card, Carousel  } from 'antd'
 const Recommend = React.createClass({
     render: function (){
-        function onChange(a) {
-            console.log(a);
-        }
-
         return (
             <div className="recommendBox">
                 <div className="contentBox">

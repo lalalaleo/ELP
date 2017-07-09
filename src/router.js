@@ -12,7 +12,6 @@ const App = React.createClass({
     render:function(){
       window.location.href="/login";
     }
-
 });
 
 function RouterConfig({ history }) {
