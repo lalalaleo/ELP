@@ -35,10 +35,16 @@ const Recommend = React.createClass({
                 <PopularClasses />
                 {/*学霸们*/}
                 <div className="contentBox">
-                    <Row className="title"><h2>精选与推荐</h2></Row>
-                    <Row>
-                        <Col span="12">123</Col>
-                        <Col span="12">12</Col>
+                    <Row className="title"><h2>学霸们</h2></Row>
+                    <Row type="flex" justify="center" align="top" style={{marginLeft:50,marginRight:50}}>
+                        <GlegooderItem />
+                        <GlegooderItem />
+                        <GlegooderItem />
+                        <GlegooderItem />
+                        <GlegooderItem />
+                        <GlegooderItem />
+                        <GlegooderItem />
+                        <GlegooderItem />
                     </Row>
                 </div>
             </div>
@@ -172,4 +178,16 @@ const PopularClasses = React.createClass({
         );
     }
 });
+const GlegooderItem = React.createClass({
+    render: function(){
+        return(
+            <Col className="glegooderItem" span="6">
+                <img src="/image/people_avatar.jpg" />
+                <h2>Zuckerberg</h2>
+                <h3>前端部门</h3>
+            </Col>
+        );
+    }
+});
+
 export { Recommend };
