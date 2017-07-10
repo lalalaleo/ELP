@@ -4,15 +4,17 @@
 .learningBox {
     width: 1000px;
     max-width: 100%;
-    padding: 30px 0;
+    padding: 20px 0;
 
     .history {
         padding: 0 20px;
+        
 
         .timeLine {
             background-color: white;
             padding: 50px 20px;
             border-radius: @radius;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 
             .end {
                 height: 20px;
@@ -62,12 +64,14 @@
     }
 
     .hot {
-        padding: 0 20px;
+        padding: 0;
 
         .hotClasses {
             padding: 20px;
             background-color: white;
             border-radius: @radius;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 
             .title {
                 font-size: 18px;
@@ -78,6 +82,12 @@
 
             .classTag {
                 margin-bottom: 10px;
+            }
+        }
+        .infoBox {
+            span {
+                font-size: 13px;
+                color: #8590a6;
             }
         }
     }
