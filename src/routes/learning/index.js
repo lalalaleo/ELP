@@ -40,6 +40,29 @@ const Learning = React.createClass({
                             <ClassTag classID='echarts' />
                         </Row>
                     </Col>
+                    <Col className="hotClasses">
+                        <Row className="title">
+                            <center><span>大家都在学</span></center>
+                        </Row>
+                        <Row type="flex" justify="center">
+                            <ClassTag classID='react' classLink='http://www.baidu.com' />
+                            <ClassTag classID='react-dom' />
+                            <ClassTag classID='webpack' />
+                            <ClassTag classID='react-redux' />
+                            <ClassTag classID='react-route' />
+                            <ClassTag classID='react-server' />
+                            <ClassTag classID='react-native' />
+                            <ClassTag classID='express' />
+                            <ClassTag classID='atool-build' />
+                            <ClassTag classID='jquery' />
+                            <ClassTag classID='echarts' />
+                        </Row>
+                    </Col>
+                    <Col className="infoBox">
+                        <span>Zero团队 · </span>
+                        <span>隐私条例 · </span>
+                        <span>© 2017 ELP</span>
+                    </Col>
                 </Col>
             </Row>
         );
