@@ -8,6 +8,7 @@ import {  Row  } from 'antd'
 const IndexPage = React.createClass({
     render:
         function (){
+            if(sessionStorage.username==null) window.location.href="/login";
             return(
                 <div>
                     <Header>

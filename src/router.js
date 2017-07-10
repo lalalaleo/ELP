@@ -10,7 +10,7 @@ import {ErrorPage} from './routes/404/index';
 
 const App = React.createClass({
     render:function(){
-      window.location.href="/login";
+      window.location.href="/home";
     }
 });
 
