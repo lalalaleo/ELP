@@ -13,7 +13,7 @@ const Recommend = React.createClass({
             <div className="recommendBox">
                 {/*精选与推荐*/}
                 <div className="contentBox">
-                    <Row className="title"><h2>精选与推荐</h2></Row>
+                    <Row className="title"><h2>精选</h2></Row>
                     <Row>
                         <Carousel className="carousel">
                             <div>
@@ -164,7 +164,7 @@ const PopularClasses = React.createClass({
         ];
         return(
             <div className="contentBox">
-                <Row className="title"><h2>热门课程</h2></Row>
+                <Row className="title"><h2>热门与新开的课程</h2></Row>
                 <Row>
                     <RadioGroup defaultValue="a" size="large" style={{marginBottom:20}}>
                         <RadioButton value="a">最热</RadioButton>
