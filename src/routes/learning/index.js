@@ -24,7 +24,7 @@ const Learning = React.createClass({
                 <Col span={8} className="hot">
                     <Col className="hotClasses">
                         <Row className="title">
-                            <center><span>推荐</span></center>
+                            <center><span>为你推荐</span></center>
                         </Row>
                         <Row type="flex" justify="center">
                             <ClassTag color='yellow' classID='React开发教程：从入门到转行' classLink='http://www.baidu.com' />

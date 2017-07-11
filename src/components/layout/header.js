@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styles from './header.less'
@@ -9,6 +10,19 @@ const RadioGroup = Radio.Group;
 
 const IndexToolBar = React.createClass({
     render: function (){
+        function messageShow(){
+            if($("#coverLayer").length==0){
+                $('body').append("<div id='coverLayer' />");
+                $("#messageIcon").append("<div class='arrow' />");
+                ReactDOM.render(<Message />,document.getElementById("messageBox"));
+                $("#coverLayer").click(function(){messageRemove();});
+            }
+        }
+        function messageRemove(){
+            $(".arrow").remove();
+            $("#messageBox").children().remove();
+            $("#coverLayer").remove();
+        }
         return (
             <Row type="flex" justify="center" align="middle" className="indexToolBar">
                 <Row type="flex" justify="space-around" align="middle" className="toolBar">
@@ -16,7 +30,6 @@ const IndexToolBar = React.createClass({
                     <Col span="1">
                         <Row className="header_logo" type="flex" justify="start" align="middle">
                             <a href="/home"><img src="/image/elp_logo.png" /></a>
-                            {/*<span>E L P</span>*/}
                         </Row>
                     </Col>
                     {/*导航*/}
@@ -33,11 +46,16 @@ const IndexToolBar = React.createClass({
                     {/*消息、个人信息*/}
                     <Col span="6">
                         <Row  type="flex" justify="end" align="middle">
-                            <Button  className="message" shape="circle" size="large"><Icon type="message" /></Button>
+                            <div id="messageIcon" onClick ={messageShow}>
+                                <Button  shape="circle" size="large" ><Icon type="message" /></Button>
+                            </div>
                             <Button  className="avatar" shape="circle" size="large">
                                 <img  src="/image/test_avatar.png"></img>
                             </Button>
                         </Row>
+                    </Col>
+                    <Col span="16" />
+                    <Col span="8"  id="messageBox">
                     </Col>
                 </Row>
             </Row>
@@ -64,6 +82,18 @@ const SegmentCtrl = React.createClass({
             </Row>
         )
     }
+});
+
+const Message = React.createClass({
+   render: function(){
+       return(
+           <div className="message">
+                <div className="messageHeader">
+                    <h3>消息</h3>
+                </div>
+           </div>
+       );
+   }         
 });
 
 const Header = React.createClass({
