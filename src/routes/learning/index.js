@@ -24,38 +24,38 @@ const Learning = React.createClass({
                 <Col span={8} className="hot">
                     <Col className="hotClasses">
                         <Row className="title">
-                            <center><span>大家都在学</span></center>
+                            <center><span>推荐</span></center>
                         </Row>
                         <Row type="flex" justify="center">
-                            <ClassTag classID='react' classLink='http://www.baidu.com' />
-                            <ClassTag classID='react-dom' />
-                            <ClassTag classID='webpack' />
-                            <ClassTag classID='react-redux' />
-                            <ClassTag classID='react-route' />
-                            <ClassTag classID='react-server' />
-                            <ClassTag classID='react-native' />
-                            <ClassTag classID='express' />
-                            <ClassTag classID='atool-build' />
-                            <ClassTag classID='jquery' />
-                            <ClassTag classID='echarts' />
+                            <ClassTag color='yellow' classID='React开发教程：从入门到转行' classLink='http://www.baidu.com' />
+                            <ClassTag color='yellow' classID='react-dom教程' />
+                            <ClassTag color='yellow' classID='webpack入门' />
+                            <ClassTag color='yellow' classID='react-server' />
+                            <ClassTag color='yellow' classID='react-native' />
+                            <ClassTag color='yellow' classID='react-redux开发' />
+                            <ClassTag color='yellow' classID='react-router v4更新' />
+                            <ClassTag color='yellow' classID='express轻量node后端框架' />
+                            <ClassTag color='yellow' classID='atool-build工具' />
+                            <ClassTag color='yellow' classID='jquery框架简介' />
+                            <ClassTag color='yellow' classID='echarts入门' />
                         </Row>
                     </Col>
                     <Col className="hotClasses">
                         <Row className="title">
-                            <center><span>大家都在学</span></center>
+                            <center><span>热搜词</span></center>
                         </Row>
                         <Row type="flex" justify="center">
-                            <ClassTag classID='react' classLink='http://www.baidu.com' />
-                            <ClassTag classID='react-dom' />
-                            <ClassTag classID='webpack' />
-                            <ClassTag classID='react-redux' />
-                            <ClassTag classID='react-route' />
-                            <ClassTag classID='react-server' />
-                            <ClassTag classID='react-native' />
-                            <ClassTag classID='express' />
-                            <ClassTag classID='atool-build' />
-                            <ClassTag classID='jquery' />
-                            <ClassTag classID='echarts' />
+                            <ClassTag color='blue' classID='react' classLink='http://www.baidu.com' />
+                            <ClassTag color='blue' classID='react-dom' />
+                            <ClassTag color='blue' classID='webpack' />
+                            <ClassTag color='blue' classID='react-redux' />
+                            <ClassTag color='blue' classID='react-route' />
+                            <ClassTag color='blue' classID='react-server' />
+                            <ClassTag color='blue' classID='react-native' />
+                            <ClassTag color='blue' classID='express' />
+                            <ClassTag color='blue' classID='atool-build' />
+                            <ClassTag color='blue' classID='jquery' />
+                            <ClassTag color='blue' classID='echarts' />
                         </Row>
                     </Col>
                     <Col className="infoBox">
@@ -96,9 +96,9 @@ function HistoryLi(){
     );
 }
 
-function ClassTag({classID,classLink}){
+function ClassTag({color,classID,classLink}){
     return (
-        <Tag color="blue" className="classTag"><a href={classLink}>{classID}</a></Tag>
+        <Tag color={color} className="classTag"><a href={classLink}>{classID}</a></Tag>
     );
 }
 

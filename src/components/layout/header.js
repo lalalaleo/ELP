@@ -15,7 +15,7 @@ const IndexToolBar = React.createClass({
                     {/*logo、标题*/}
                     <Col span="1">
                         <Row className="header_logo" type="flex" justify="start" align="middle">
-                            <img src="/image/elp_logo.png" />
+                            <a href="/home"><img src="/image/elp_logo.png" /></a>
                             {/*<span>E L P</span>*/}
                         </Row>
                     </Col>
