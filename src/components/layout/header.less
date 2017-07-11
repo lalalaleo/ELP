@@ -41,26 +41,51 @@
             border-left: 0;
         }
     }
-    .messageIcon {
-        margin-right: 16px;
+    #messageIcon {
+        width: 46px;
+        right: 46px;
+        position: absolute;
+    }
+    .arrow {
+        transform:rotate(-45deg);
+        background-color: white;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        left: 8px;
+        margin-top: 11px;
+        border-top:1px solid rgba(0,0,0,0.1);
+        border-right:1px solid rgba(0,0,0,0.1);
+        z-index: 201;
     }
     .avatar {
         margin-right: 16px;
         img {
             width: 100%;
-            border-radius: 20px;
+            border-radius: 20px; 
         }
     }
     #messageBox {
-        div{
+        z-index: 200;
+        .message {
             width: 100%;
-            height: 150px;
+            height: 300px;
             background-color: white;
             position: absolute;
-            top: 20px;
+            top: 18px;
             border: 1px solid #e7eaf1;
             border-radius: 4px;
-            box-shadow: 0 5px 20px rgba(0,34,77,.1)
+            box-shadow: 0 5px 20px rgba(0,34,77,.1);
+            
+            .messageHeader {
+                box-shadow: 0 1px 1px rgba(0,34,77,.05);
+                h3 {
+                    font-size: 16px;
+                    text-align: center;
+                    color: rgba(0,0,0,0.4);
+                    line-height: 30px;
+                }
+            }
         }
     }
 }
@@ -101,3 +126,11 @@
     height: @indexToolBarHeight ;
 }
 
+#coverLayer {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
