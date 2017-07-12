@@ -118,7 +118,7 @@ const All = React.createClass({
             },
         ];
         return(
-            <Row className="allBox">
+            <Row id="AllClasses" className="page_content">
                 <Col span={4}>
                     <Menu style={{ width: 180 }} defaultSelectedKeys={['1']} mode="inline" style={{borderTopLeftRadius:5,borderBottomLeftRadius:5}}>
                         <Menu.Item key="1">前端</Menu.Item>
