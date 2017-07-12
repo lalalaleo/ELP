@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import styles from './index.less';
 import { Header, IndexToolBar, SegmentCtrl } from '../../components/layout/header.js';
+import { Content } from '../../components/layout/content.js';
 import { Test } from '../test/index'
 import {  Row  } from 'antd'
 
@@ -10,13 +10,13 @@ const IndexPage = React.createClass({
         function (){
             if(sessionStorage.username==null) window.location.href="/login";
             return(
-                <div>
+                <div id="index" className="Container">
                     <Header>
                             <IndexToolBar />
                     </Header>
-                    <Row type="flex" justify="center" align="top" className="content">
-                        {this.props.children}
-                    </Row>
+                    <Content>
+                          {this.props.children}
+                    </Content>
                 </div>
             );
         }
