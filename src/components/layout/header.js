@@ -75,7 +75,7 @@ const SegmentCtrl = React.createClass({
                 <Row type="flex" justify="center" align="middle" className="segmentCtrlBar">
                     <RadioGroup  size="large" onChange={this.onChange}  >
                         <RadioButton value="learning">正在学习</RadioButton>
-                        <RadioButton value="recommend">推荐课程</RadioButton>
+                        <RadioButton value="discover">推荐课程</RadioButton>
                         <RadioButton value="all">全部课程</RadioButton>
                     </RadioGroup>
                 </Row>
