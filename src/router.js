@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute } from 'dva/router';
 import { IndexPage } from './routes/index/index';
 import { Learning } from './routes/learning/index';
 import { All } from './routes/all/index';
-import { Recommend } from './routes/recommend/index';
+import { Discover } from './routes/discover/index';
 import { Login } from './routes/login/index';
 import { Search } from './routes/search/index';
 import {Test} from './routes/test/index';
@@ -23,7 +23,7 @@ function RouterConfig({ history }) {
       <Route path="home" component={IndexPage}>
         <IndexRoute component={Learning} />
         <Route path="learning" component={Learning} />
-        <Route path="recommend" component={Recommend} />
+        <Route path="discover" component={Discover} />
         <Route path="all" component={All} />
       </Route>
       <Route path="search" component={Search} />

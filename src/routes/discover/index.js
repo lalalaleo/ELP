@@ -6,16 +6,16 @@ import {  Row, Col, Icon, Card, Carousel, Table ,Radio } from 'antd'
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
-const Recommend = React.createClass({
+const Discover = React.createClass({
     render: function (){
         
         return (
-            <div className="recommendBox">
+            <div id="Discover" className="page_content">
                 {/*精选与推荐*/}
-                <div className="contentBox">
-                    <Row className="title"><h2>精选</h2></Row>
+                <div id="Discover_recommend" className="page_content_item">
+                    <Row className="page_content_item_title"><h2>精选</h2></Row>
                     <Row>
-                        <Carousel className="carousel">
+                        <Carousel className="show_carousel">
                             <div>
                                 <CarouselItem />
                             </div>
@@ -32,10 +32,19 @@ const Recommend = React.createClass({
                     </Row>
                 </div>
                 {/*热门课程*/}
-                <PopularClasses />
+                <div id="Discover_hot-newclasses" className="page_content_item">
+                    <Row className="page_content_item_title"><h2>热门与新开的课程</h2></Row>
+                    <Row>
+                        <RadioGroup defaultValue="a" size="large" style={{marginBottom:20}}>
+                            <RadioButton value="a">最热</RadioButton>
+                            <RadioButton value="b">最新</RadioButton>
+                        </RadioGroup>
+                    </Row>
+                    <PopularClasses />
+                </div>
                 {/*学霸们*/}
-                <div className="contentBox">
-                    <Row className="title"><h2>学霸们</h2></Row>
+                <div id="Discover_glegooder" className="page_content_item">
+                    <Row className="page_content_item_title"><h2>学霸们</h2></Row>
                     <Row type="flex" justify="center" align="top" style={{marginLeft:50,marginRight:50}}>
                         <GlegooderItem />
                         <GlegooderItem />
@@ -51,29 +60,13 @@ const Recommend = React.createClass({
         );
     }
 });
-
-const RecmdClassCard = React.createClass({
-    render: function(){
-        return(
-            <Card style={{ width: 440 }} bodyStyle={{ padding: 0 }} className="recmdClassCard">
-                <div className="recmdClassCard-image">
-                <img width="100%" />
-                </div>
-                <div className="recmdClassCard-card">
-                <h3>React开发教程：从入门到转行</h3>
-                <p>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-                </div>
-            </Card>
-        );
-    }
-});
 const CarouselItem = React.createClass({
     render: function(){
         return(
-            <div className="carouselItem">
+            <div className="show_carousel_item">
                 <img src="/image/cover_react_blue.png" />
                 <Row>
-                <div className="carouselContent">
+                <div className="show_carousel_item_info">
                     <div>
                         <h3>React开发教程：从入门到转行</h3>
                         <p>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
@@ -163,25 +156,16 @@ const PopularClasses = React.createClass({
             },
         ];
         return(
-            <div className="contentBox">
-                <Row className="title"><h2>热门与新开的课程</h2></Row>
-                <Row>
-                    <RadioGroup defaultValue="a" size="large" style={{marginBottom:20}}>
-                        <RadioButton value="a">最热</RadioButton>
-                        <RadioButton value="b">最新</RadioButton>
-                    </RadioGroup>
-                </Row>
-                <Row>
-                    <Table columns={columns} dataSource={data} size="small" showHeader={false} pagination={{pageSize:5}} />
-                </Row>
-            </div>
+            <Row>
+                <Table columns={columns} dataSource={data} size="small" showHeader={false} pagination={{pageSize:5}} />
+            </Row>
         );
     }
 });
 const GlegooderItem = React.createClass({
     render: function(){
         return(
-            <Col className="glegooderItem" span="6">
+            <Col className="glegooder_item" span="6">
                 <img src="/image/people_avatar.jpg" />
                 <h2>Zuckerberg</h2>
                 <h3>前端部门</h3>
@@ -190,4 +174,4 @@ const GlegooderItem = React.createClass({
     }
 });
 
-export { Recommend };
+export { Discover };

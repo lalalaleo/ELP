@@ -1,30 +1,18 @@
 @gutter : 40px;
 @radius : 2px;
 @contentPadding : 20px;
-.recommendBox {
-    width: 960px;
-    max-width: 100%;
-    margin: 20px 0;
+#Discover {
     background-color: white;
     border-radius:@radius; 
-    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
     box-shadow: 0 1px 3px rgba(0,37,55,.05);
 
-    .contentBox {
-        padding: @contentPadding;
-        width:100%;
-        box-sizing: border-box;
-
-        .title {
-            margin-bottom: 20px;
-        }
-        .carousel {
+    #Discover_recommend {
+        .show_carousel {
             width: 100%;
             box-sizing: border-box;
             background-color: rgba(0, 0, 0, 0.3);
             box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-            // border-radius: @radius;
-            .carouselItem {
+            .show_carousel_item {
                 width: 100%;
                 box-sizing: border-box;
                 img {
@@ -34,7 +22,7 @@
                     background-color: skyblue;
                     // border-radius: @radius;
                 }
-                .carouselContent {
+                .show_carousel_item_info {
                     width: 100%;
                     position: absolute;
                     bottom: 30px;
@@ -62,9 +50,16 @@
                 }
             }
         }
-        .glegooderItem {
+        
+    }
+    #Discover_hot-newclasses {
+
+    }
+    #Discover_glegooder {
+        .glegooder_item {
             margin: 20px 0;
             padding: 0 60px;
+
             img {
                 width: 100%;
                 border-radius: 999px;
