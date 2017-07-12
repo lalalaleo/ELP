@@ -5,8 +5,8 @@ import {  Row, Col, Timeline, Icon, Tag  } from 'antd'
 const Learning = React.createClass({
     render: function Learning(){
         return (
-            <Row type="flex" justify="center" align="top" className="learningBox">
-                <Col span={16} className="history">
+            <Row type="flex" justify="center" align="top" id="learningBox" className="page_content">
+                <Col id="history" className="page_content_left">
                     <Timeline className="timeLine">
                         <HistoryLi />
                         <HistoryLi />
@@ -21,7 +21,7 @@ const Learning = React.createClass({
                         <Timeline.Item className="end"><center>没有了哦~~~~( •̀ ω •́ )✧</center></Timeline.Item>
                     </Timeline>
                 </Col>
-                <Col span={8} className="hot">
+                <Col id="hot" className="page_content_right">
                     <Col className="hotClasses">
                         <Row className="title">
                             <center><span>为你推荐</span></center>
