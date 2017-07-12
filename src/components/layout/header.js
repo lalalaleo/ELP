@@ -23,6 +23,9 @@ const IndexToolBar = React.createClass({
             $("#messageBox").children().remove();
             $("#coverLayer").remove();
         }
+        function btnSaerch(){
+            window.location.href="/search";
+        }
         return (
             <Row type="flex" justify="center" align="middle" className="indexToolBar">
                 <Row type="flex" justify="space-around" align="middle" className="toolBar">
@@ -40,7 +43,7 @@ const IndexToolBar = React.createClass({
                     <Col span="9">
                         <InputGroup className="search">
                             <Input size="large" placeholder="搜索"></Input>
-                            <Button type="primary" size="large"><Icon type="search" /></Button>
+                            <Button type="primary" size="large" onClick={btnSaerch}><Icon type="search" /></Button>
                         </InputGroup>
                     </Col>
                     {/*消息、个人信息*/}

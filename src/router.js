@@ -6,6 +6,7 @@ import { Learning } from './routes/learning/index';
 import { All } from './routes/all/index';
 import { Discover } from './routes/discover/index';
 import { Login } from './routes/login/index';
+import { Classes } from './routes/classes/index';
 import { Search } from './routes/search/index';
 import {Test} from './routes/test/index';
 import {ErrorPage} from './routes/404/index';
@@ -28,6 +29,7 @@ function RouterConfig({ history }) {
       </Route>
       <Route path="search" component={Search} />
       <Route path="login" component={Login} />
+      <Route path="classes" component={Classes} />
       <Route path="*" component={ErrorPage} />
     </Router>
   );
