@@ -105,61 +105,61 @@ const PopularClasses = React.createClass({
                 key:1,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
                 name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
             {
                 key:2,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
             {
                 key:3,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
             {
                 key:4,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
             {
                 key:5,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
             {
                 key:6,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
             {
                 key:7,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
             {
                 key:8,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
             {
                 key:9,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
             {
                 key:10,
                 cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:500}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
+                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
+                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
             },
         ];
         return(
