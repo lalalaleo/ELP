@@ -24,7 +24,7 @@ const IndexToolBar = React.createClass({
             $("#coverLayer").remove();
         }
         function btnSaerch(){
-            window.location.href="/search";
+            window.location.href="/home/search";
         }
         return (
             <Row type="flex" justify="center" align="middle" className="indexToolBar">

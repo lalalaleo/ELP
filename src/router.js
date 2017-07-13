@@ -26,10 +26,10 @@ function RouterConfig({ history }) {
         <Route path="learning" component={Learning} />
         <Route path="discover" component={Discover} />
         <Route path="all" component={All} />
+        <Route path="search" component={Search} />
+        <Route path="classes" component={Classes} />
       </Route>
-      <Route path="search" component={Search} />
       <Route path="login" component={Login} />
-      <Route path="classes" component={Classes} />
       <Route path="*" component={ErrorPage} />
     </Router>
   );

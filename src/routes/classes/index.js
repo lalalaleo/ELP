@@ -8,15 +8,8 @@ import { Table, Row, Col } from 'antd'
 const Classes = React.createClass({
     render: function(){
         return (
-            <div>
-                <Header>
-                    <IndexToolBar />
-                </Header>
-                <Content>
-                    <div id="Classes" className="page_content">
-                        123
-                    </div>
-                </Content>
+            <div id="Classes" className="page_content">
+                123
             </div>
         );
     }

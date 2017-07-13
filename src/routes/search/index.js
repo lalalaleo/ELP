@@ -114,17 +114,10 @@ const Search = React.createClass({
             },
         ];
         return (
-            <div>
-                <Header>
-                    <IndexToolBar />
-                </Header>
-                <Content>
-                    <div id="Search" className="page_content">
-                        <Row>
-                            <Table columns={columns} dataSource={data} size="small" showHeader={false} pagination={{pageSize:10}} />
-                        </Row>
-                    </div>
-                </Content>
+            <div id="Search" className="page_content">
+                <Row>
+                    <Table columns={columns} dataSource={data} size="small" showHeader={false} pagination={{pageSize:10}} />
+                </Row>
             </div>
         );
     }
