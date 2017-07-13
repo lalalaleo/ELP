@@ -12,7 +12,6 @@ const Classes = React.createClass({
     render: function(){
         return (
             <div id="Classes" className="page_content">
-                
                 <div id="Classes_cover" className="page_content_item">
                     <img src="/image/cover_react_blue.png" />
                 </div>

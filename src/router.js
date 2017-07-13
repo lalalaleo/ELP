@@ -7,6 +7,7 @@ import { All } from './routes/all/index';
 import { Discover } from './routes/discover/index';
 import { Login } from './routes/login/index';
 import { Classes } from './routes/classes/index';
+import { Class } from './routes/classItem/index';
 import { Search } from './routes/search/index';
 import {Test} from './routes/test/index';
 import {ErrorPage} from './routes/404/index';
@@ -28,7 +29,8 @@ function RouterConfig({ history }) {
         <Route path="all" component={All} />
         <Route path="search" component={Search} />
         <Route path="classes" component={Classes} />
-      </Route>
+        <Route path="classes/class" component={Class} />
+       </Route>
       <Route path="login" component={Login} />
       <Route path="*" component={ErrorPage} />
     </Router>
