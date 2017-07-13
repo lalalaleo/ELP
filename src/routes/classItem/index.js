@@ -13,7 +13,6 @@ const Class = React.createClass({
             PDFObject.embed("/files/test.pdf", "#Class_content",{width: "100%"});
             $("#Class_content").append("<div><a id='btnscreen'></a></div>");
             ReactDOM.render(<Icon type="arrows-alt" />,document.getElementById("btnscreen"));
-
             $("#btnscreen").click(function(){
                 if($("#Class_content").width()<=1000){
                     $("#Class_content").css({
@@ -45,7 +44,7 @@ const Class = React.createClass({
             <div id="Class" className="page_content">
                 <div id="Class_content" className="page_content_item">
                      {/*<img src="/image/cover_react_blue.png" /> */}
-                    {/* <iframe src="https://www.youtube.com/embed/YWaptz0EUCk" frameborder="0" allowfullscreen></iframe> */}
+                     {/* <iframe src="https://www.youtube.com/embed/YWaptz0EUCk" frameborder="0" allowfullscreen></iframe>  */}
                     
                 </div>
             </div>
