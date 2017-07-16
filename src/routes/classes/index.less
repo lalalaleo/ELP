@@ -20,29 +20,16 @@
             border-radius: 2px;
         }
     }
-    #Classes_layout_left {
-        width: 30%;
 
-         
-        #Classes_item_list {
-            .classes_layout_item;
-        
-            span {
-                font-weight: bold;
-            }
+    #Classes_info {
+        .classes_layout_item;
+
+        h2 {
+            margin-bottom: 10px;
         }
     }
-
-    #Classes_layout_right {
-        width: 70%;
-
-        #Classes_info {
-            .classes_layout_item;
-
-            h2 {
-                margin-bottom: 10px;
-            }
-        }
+    
+    #Classes_layout_left {
 
         #Classes_history {
             .classes_layout_item;
@@ -104,5 +91,19 @@
         }
     }
    
+    #Classes_layout_right {
+         
+        #Classes_item_list {
+            .classes_layout_item;
+        
+            span {
+                &[name='title']{
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
 }
 
