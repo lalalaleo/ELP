@@ -15,7 +15,7 @@
             }
         }
 
-        .historyLi {
+        .historyItem {
             height: 120px;
             .time {
                 font-size: 14px;
@@ -27,6 +27,7 @@
                     background: skyblue;
                     border: 0;
                     border-radius: @radius;
+                    box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
                 }
             }
             .info {
@@ -35,7 +36,12 @@
                     font-size: 16px;
                     font-weight: bold;
                     height: @classesCoverHeight - 47;
-                    color: rgba(0, 0, 0, 0.6);
+                    a {
+                        color: rgba(0, 0, 0, 0.6);
+                        &:hover{
+                            color: #108ee9;
+                        }
+                    }
                 }
                 .desc {
                     font-size: 14px;
