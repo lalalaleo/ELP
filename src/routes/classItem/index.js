@@ -1,16 +1,16 @@
 import $ from 'jquery'
 import React from 'react'
-import ReactDOM from 'react-dom'
 import style from './index.less'
+
 import { Header,IndexToolBar } from '../../components/layout/header'
 import { Content } from '../../components/layout/content'
-import { Icon, Menu, Row, Col } from 'antd'
+import { Comments } from './components/comments'
+import { ClassList } from '../classes/components/classList'
+import { Icon, Menu, Row, Col, Input, Button } from 'antd'
+
 import PDFObject from '../../utils/pdfobject.min.js'
 import { Player } from 'video-react'
 import "../../utils/video-react.css"
-
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 const Class = React.createClass({
     render: function(){
@@ -55,17 +55,17 @@ const Class = React.createClass({
                 <Row id="Class_ctrl" className="page_content_item">
                     <Col span="8">
                         <Row type="flex" justify="start" align="middle">
-                            <a><span>上一课时：</span>第一章 第四课时<span></span></a>
+                            <a><span>上一课时：</span>Java中通过案例学习 try...catch...finally<span></span></a>
                         </Row>
                     </Col>
                     <Col span="8">
                         <Row id='Class_times' type="flex" justify="center" align="middle">
-                            <Icon type="clock-circle-o" /><span>4 : 15</span>
+                            <Icon type="clock-circle-o" /><span>4 : 32</span>
                         </Row>
                     </Col>
                     <Col span="8">
                         <Row type="flex" justify="end" align="middle">
-                            <a><span>下一课时：</span>第二章 第二课时<span></span></a>
+                            <a><span>下一课时：</span>Java 中的异常链<span></span></a>
                         </Row>
                     </Col>
                 </Row>
@@ -74,17 +74,25 @@ const Class = React.createClass({
                     <Col id="Class_layout_left" className="page_content_left">
 
                         <Row id="Class_title" className="page_content_item">
-                            <Col span="16"><span name='classes_name'>Java入门</span><span name='class_name'>第二章 第一课时</span></Col>
+                            <Col span="16"><span name='classes_name'>Java入门</span><span name='class_name'>Java 中的异常抛出以及自定义异常</span></Col>
                             <Col span="8"><p name="pageview">127次观看</p></Col>
                         </Row>
                     
                         <Row id="Class_info" className="page_content_item">
                             <h4>发布于 2017年7月12日</h4>
-                            <p>利用 JSX 编写 DOM 结构，可以用原生的 HTML 标签，也可以直接像普通标签一样引用 React 组件。这两者约定通过大小写来区分，小写的字符串是 HTML 标签，大写开头的变量是 React 组件。</p>
+                            <p>异常指不期而至的各种状况，如：文件找不到、网络连接失败、非法参数等。异常是一个事件，它发生在程序运行期间，干扰了正常的指令流程。Java通 过API中Throwable类的众多子类描述各种不同的异常。因而，Java异常都是对象，是Throwable子类的实例，描述了出现在一段编码中的 错误条件。当条件生成时，错误将引发异常。</p>
                         </Row>
                     
+                        <Col id="Class_comment_textarea" className="page_content_item">
+                            <Row>
+                                <Input type="textarea" placeholder="写下你的评论" autosize={{ minRows: 3, maxRows: 8 }} />
+                                </Row>
+                                <Row type="flex" justify="end" align="center">
+                                <Button type="primary" size="small">发送</Button>
+                                </Row>
+                        </Col>
                         <Col id="Class_comments" className="page_content_item">
-                            <Row></Row>
+                            <Comments />
                         </Col>
 
                     </Col>
@@ -92,28 +100,7 @@ const Class = React.createClass({
                     <Col id="Class_layout_right" className="page_content_right">
                         <div id="Class_item_list" className="page_content_item">
                             <h3>课时目录</h3>
-                            <Menu style={{border:'none'}}  defaultOpenKeys={['sub2']} mode="inline">
-                                <SubMenu key="sub1" title={<span name="title">第一章</span>}>
-                                    <Menu.Item key="1">第一课时</Menu.Item>
-                                    <Menu.Item key="2">第二课时</Menu.Item>
-                                    <Menu.Item key="3">第三课时</Menu.Item>
-                                    <Menu.Item key="4">第四课时</Menu.Item>
-                                </SubMenu>
-                                <SubMenu key="sub2" title={<span name="title">第二章</span>}>
-                                    <Menu.Item key="5">第一课时</Menu.Item>
-                                    <Menu.Item key="6">第二课时</Menu.Item>
-                                </SubMenu>
-                                <SubMenu key="sub3" title={<span name="title">第三章</span>}>
-                                    <Menu.Item key="7">第一课时</Menu.Item>
-                                    <Menu.Item key="8">第二课时</Menu.Item>
-                                </SubMenu>
-                                <SubMenu key="sub4" title={<span name="title">第四章</span>}>
-                                <Menu.Item key="9">第一课时</Menu.Item>
-                                <Menu.Item key="10">第二课时</Menu.Item>
-                                <Menu.Item key="11">第三课时</Menu.Item>
-                                <Menu.Item key="12">第四课时</Menu.Item>
-                                </SubMenu>
-                            </Menu>
+                            <ClassList defaultKey={['4']} />
                         </div>
                     </Col>
                 </Row>

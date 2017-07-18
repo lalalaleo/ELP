@@ -1,12 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import style from './index.less'
 import { Header,IndexToolBar } from '../../components/layout/header'
 import { Content } from '../../components/layout/content'
-import { Icon, Menu, Row, Col } from 'antd'
-
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+import { ClassList } from './components/classList'
+import { Icon, Row, Col } from 'antd'
 
 const Classes = React.createClass({
     render: function(){
@@ -17,7 +14,7 @@ const Classes = React.createClass({
                 </div>
                 <div id="Classes_info" className="page_content_item">
                     <h2>Java入门</h2>
-                    <p>Java是一种跨平台的语言，一次编写，到处运行，在世界编程语言排行榜中稳居第二名（第一名是C语言）。Java用途广泛，可以用来开发传统的客户端软件和网站后台，也可以开发如火如荼 Android 应用和云计算平台。</p>
+                    <p>Java是一种跨平台的语言，一次编写，到处运行，在世界编程语言排行榜中稳居第二名（第一名是C语言）。Java用途广泛，可以用来开发传统的客户端软件和网站后台，也可以开发Android 应用和云计算平台。</p>
                 </div>
                 <Row type="flex" justify="center" align="top">
                     
@@ -70,28 +67,7 @@ const Classes = React.createClass({
                     <Col id="Classes_layout_right" className="page_content_right">
                         <div id="Classes_item_list" className="page_content_item">
                             <h3>课时目录</h3>
-                            <Menu style={{border:'none'}}  defaultOpenKeys={['sub2']} mode="inline">
-                                <SubMenu key="sub1" title={<span name="title">第一章</span>}>
-                                    <Menu.Item key="1">第一课时</Menu.Item>
-                                    <Menu.Item key="2">第二课时</Menu.Item>
-                                    <Menu.Item key="3">第三课时</Menu.Item>
-                                    <Menu.Item key="4">第四课时</Menu.Item>
-                                </SubMenu>
-                                <SubMenu key="sub2" title={<span name="title">第二章</span>}>
-                                    <Menu.Item key="5"><a href='/home/classes/class'><span>第一课时</span></a></Menu.Item>
-                                    <Menu.Item key="6">第二课时</Menu.Item>
-                                </SubMenu>
-                                <SubMenu key="sub3" title={<span name="title">第三章</span>}>
-                                    <Menu.Item key="7">第一课时</Menu.Item>
-                                    <Menu.Item key="8">第二课时</Menu.Item>
-                                </SubMenu>
-                                <SubMenu key="sub4" title={<span name="title">第四章</span>}>
-                                <Menu.Item key="9">第一课时</Menu.Item>
-                                <Menu.Item key="10">第二课时</Menu.Item>
-                                <Menu.Item key="11">第三课时</Menu.Item>
-                                <Menu.Item key="12">第四课时</Menu.Item>
-                                </SubMenu>
-                            </Menu>
+                            <ClassList />
                         </div>
                     </Col>
                 </Row>
