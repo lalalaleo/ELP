@@ -2,12 +2,110 @@ import React from 'react'
 import styles from './index.less'
 import {  Row, Col, Icon, Card, Carousel, Table ,Radio } from 'antd'
 import { ClassesCarousel } from './components/classesCarousel'
+import { ClassesList } from '../all/components/classesList'
+import { UserList } from './components/userList'
 
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
 const Discover = React.createClass({
     render: function (){
+
+        const test_popularClassesData = [
+            {
+                cover: '/image/cover/react.png',
+                name: 'React入门',
+                info: '由于 React的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。'
+            },
+            {
+                cover: '/image/cover/python.png',
+                name: 'Python理解',
+                info: 'Python是一种面向对象、直译式计算机程序设计语言，因语法简捷而清晰，常被昵称为胶水语言，它能够很轻松地把用其他语言制作的各种模块（尤其是C/C++）轻松地联结在一起。'
+            },
+            {
+                cover: '/image/cover/sql.png',
+                name: 'MySQL进阶',
+                info: '回答要具体/建表注意点/列选择/Btree索引与hash索引/Btree索引如何发挥作用/多列索引经典题目/聚簇索引与非聚簇索引/不规则主键的页分裂/索引长度与区分度/伪哈希技巧/索引与排序'
+            },
+            {
+                cover: '/image/cover/android.png',
+                name: 'Android开发理解',
+                info: '成为真正的Android程序员，希望本课程的深入剖析能够给你起到引导的作用，也希望Sundy的深入浅出，层层分解的讲课风格你能喜欢！'
+            },
+            {
+                cover: '/image/cover/ios.png',
+                name: 'IOS开发实战',
+                info: '通讯录实战开发，本课实现模拟通讯录的登陆、添加、删除、修改的功能，涉及到第三方类库的使用，数据存储并加深理解代理和 UITableView。'
+            },
+            {
+                cover: '/image/cover/unit_test.png',
+                name: '单元测试进阶',
+                info: '第三章介绍单元测试方法，包括：语句覆盖、判定覆盖、条件覆盖、判定/条件覆盖、条件组合覆盖和路径覆盖等。'
+            },
+            {
+                cover: '/image/cover/design.png',
+                name: '设计冲刺理解',
+                info: '从优化产品到制定营销策略，从为公司命名到评估新商机的可行性。设计冲刺都能帮助你快速取得进展，并且非常确定你走的是正确方向'
+            },
+            {
+                cover: '/image/cover/java.png',
+                name: 'Java理解',
+                info: 'java是一种面向对象的编程语言，优点是可移植性比较高，最初设计时就是本着一次编写到处执行设计的。可以开发各种应用程序和游戏'
+            },
+            {
+                cover: '/image/cover/spring.png',
+                name: 'Spring理解',
+                info: '课程主要介绍依赖注入、注解装配Bean、整合Junit测试、WEB开发集成spring、AOP思想、AOP原理解剖'
+            },
+            {
+                cover: '/image/cover/spring_cloud.png',
+                name: 'SpringCloud进阶',
+                info: '第16节、Spring Cloud Stream rabbitmq下 第17节、Spring Cloud Stream kafka实战 第18节、Spring Data Flow Server 第19节、Spring Data Flow source实战'
+            },
+        ];
+
+        const test_glegooderData = [
+            {
+                avatar:'/image/avatar/test/test_1.png',
+                name:'林罡',
+                department:'后端',
+            },
+            {
+                avatar:'/image/avatar/test/test_2.png',
+                name:'陈文军',
+                department:'后端',
+            },
+            {
+                avatar:'/image/avatar/test/test_3.png',
+                name:'杨攻',
+                department:'前端',
+            },
+            {
+                avatar:'/image/avatar/test/test_4.png',
+                name:'连君龙',
+                department:'数据库',
+            },
+            {
+                avatar:'/image/avatar/test/test_5.png',
+                name:'张忠柱',
+                department:'Android',
+            },
+            {
+                avatar:'/image/avatar/test/test_6.png',
+                name:'周国祥',
+                department:'IOS',
+            },
+            {
+                avatar:'/image/avatar/test/test_7.png',
+                name:'韩悦',
+                department:'测试',
+            },
+            {
+                avatar:'/image/avatar/test/test_8.png',
+                name:'陈佳华',
+                department:'业务',
+            },
+        ]
         
         return (
             <div id="Discover" className="page_content">
@@ -27,121 +125,18 @@ const Discover = React.createClass({
                             <RadioButton value="b">最新</RadioButton>
                         </RadioGroup>
                     </Row>
-                    <PopularClasses />
+                    <ClassesList data={ test_popularClassesData } pageSize={5} />
                 </div>
                 {/*学霸们*/}
                 <div id="Discover_glegooder" className="page_content_item">
                     <Row className="page_content_item_title"><h2>学霸们</h2></Row>
-                    <Row type="flex" justify="center" align="top" style={{marginLeft:50,marginRight:50}}>
-                        <GlegooderItem />
-                        <GlegooderItem />
-                        <GlegooderItem />
-                        <GlegooderItem />
-                        <GlegooderItem />
-                        <GlegooderItem />
-                        <GlegooderItem />
-                        <GlegooderItem />
-                    </Row>
+                    <UserList data={ test_glegooderData } />
                 </div>
             </div>
         );
     }
 });
-const PopularClasses = React.createClass({
-    render: function(){
-        const columns = [
-            {
-                title: 'Cover',
-                dataIndex: 'cover',
-            }, 
-            {
-                title: 'Name',
-                dataIndex: 'name',
-            }, 
-            {
-                title: 'Info',
-                dataIndex: 'info',
-            }
-        ];
-        const data = [
-            {
-                key:1,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-            {
-                key:2,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-            {
-                key:3,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-            {
-                key:4,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-            {
-                key:5,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-            {
-                key:6,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-            {
-                key:7,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-            {
-                key:8,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-            {
-                key:9,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-            {
-                key:10,
-                cover: <img src="/image/cover_react_blue.png" style={{height:90}} />,
-                name: <h4 style={{width:200}}>React开发教程：从入门到转行</h4>,
-                info:<p style={{width:480}}>React（有时叫React.js或ReactJS）是一个为数据提供渲染为HTML视图的开源JavaScript 库。React视图通常采用包含以自定义HTML标记规定的其他组件的组件渲染。React为程序员提供了一种子组件不能直接影响外层组件（"data flows down"）的模型，数据改变时对HTML文档的有效更新，和现代单页应用中组件之间干净的分离。</p>
-            },
-        ];
-        return(
-            <Row>
-                <Table columns={columns} dataSource={data} size="small" showHeader={false} pagination={{pageSize:5}} />
-            </Row>
-        );
-    }
-});
-const GlegooderItem = React.createClass({
-    render: function(){
-        return(
-            <Col className="glegooder_item" span="6">
-                <img src="/image/people_avatar.jpg" />
-                <h2>Zuckerberg</h2>
-                <h3>前端部门</h3>
-            </Col>
-        );
-    }
-});
+
+
 
 export { Discover };
