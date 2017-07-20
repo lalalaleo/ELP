@@ -71,3 +71,26 @@
         }
     }
 }
+
+.answerItem {
+    margin: 10px 20px 20px 20px;
+    padding: 16px 12px;
+    background-color: rgba(0, 175, 255, 0.03);
+    border: 1px solid rgba(0, 175, 255, 0.08);
+    border-radius: 5px;
+
+    p{
+        &[name='hd']{
+            font-size: 16px;
+            font-weight: bold;
+            span {
+                &[name="userName"]{
+                    color:#108ee9;
+                }
+            }
+        }
+        &[name='content']{
+            font-size: 15px;
+        }
+    }
+}
