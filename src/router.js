@@ -11,6 +11,8 @@ import { Class } from './routes/classItem/index';
 import { Search } from './routes/search/index';
 import {Test} from './routes/test/index';
 import {ErrorPage} from './routes/404/index';
+import { M_IndexPage } from './routes/mobile/index/index'
+import { M_Learning } from './routes/mobile/learning/index';
 
 const App = React.createClass({
     render:function(){
@@ -30,7 +32,10 @@ function RouterConfig({ history }) {
         <Route path="search" component={Search} />
         <Route path="classes" component={Classes} />
         <Route path="classes/class" component={Class} />
-       </Route>
+      </Route>
+      <Route path="m" component={M_IndexPage}>
+        <IndexRoute component={M_Learning} />
+      </Route>      
       <Route path="login" component={Login} />
       <Route path="*" component={ErrorPage} />
     </Router>

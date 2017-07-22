@@ -10,9 +10,7 @@ const IndexPage = React.createClass({
             if(sessionStorage.username==null) window.location.href="/login";
             return(
                 <div id="index" className="Container">
-                    <Header>
-                            <IndexToolBar />
-                    </Header>
+                    <Header type='desktop' />
                     <Content>
                           {this.props.children}
                     </Content>

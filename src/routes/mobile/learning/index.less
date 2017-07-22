@@ -1,0 +1,96 @@
+@classesCoverHeight: 72px;
+@radius: 2px;
+
+#m_learningBox {
+    padding: 0;
+    #m_history {
+            width: 100%;
+
+        .timeLine {
+            background-color: white;
+            padding: 30px 10px;
+            border-radius: @radius;
+            box-shadow: 0 1px 3px rgba(0,37,55,.05);
+            .end {
+                height: 20px;
+            }
+        }
+
+        .historyItem {
+            height: 120px;
+            .time {
+                font-size: 14px;
+            }
+            .cover {
+                img {
+                    width: @classesCoverHeight/3*5;
+                    max-width: 100%;
+                    height: @classesCoverHeight;
+                    background: skyblue;
+                    border: 0;
+                    border-radius: @radius;
+                    box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+                }
+            }
+            .info {
+                height: @classesCoverHeight;
+                .title {
+                    font-size: 16px;
+                    font-weight: bold;
+                    height: @classesCoverHeight - 47;
+                    a {
+                        color: rgba(0, 0, 0, 0.6);
+                        &:hover{
+                            color: #108ee9;
+                        }
+                    }
+                }
+                .desc {
+                    font-size: 14px;
+                    height: 23px;
+                    color: rgba(0, 0, 0, 0.4);
+                }
+                .historyLi_content {
+                    height: 23px;
+                    background-color: white;
+                }
+                .divide {
+                    height: 1px;
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+            .delete {
+                height: 60px;
+            }
+        }
+    }
+
+    #m_hot {
+        .hotClasses {
+            padding: 20px;
+            background-color: white;
+            border-radius: @radius;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,37,55,.05);
+
+            .title {
+                font-size: 18px;
+                color: rgba(0, 0, 0, 0.5);
+                height: 40px;
+            }
+
+            .classTag {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    #m_InfoBox {
+        text-align: center;
+        padding-top:20px;
+        padding-bottom: 10px;
+        span {
+            font-size: 13px;
+            color: #8590a6;
+        }
+    }
+}
