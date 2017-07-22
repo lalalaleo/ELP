@@ -9,20 +9,20 @@ const M_Learning = React.createClass({
         var historyData = [
             {
                 "classesName":"Java入门",
-                "classesHref":"/home/classes",
+                "classesHref":"/m/classes",
                 "className":"第二章 第二课时",
                 "cover":"/image/cover/java.png",
                 "progress":"85%",
-                "href":"/home/classes/class",
+                "href":"/m/classes/class",
                 "time":"2017-07-04"
             },
             {
                 "classesName":"JavaEE理解",
-                "classesHref":"/home/classes",
+                "classesHref":"/m/classes",
                 "className":"第一章 第三课时",
                 "cover":"/image/cover/javaee.png",
                 "progress":"5%",
-                "href":"/home/classes/class",
+                "href":"/m/classes/class",
                 "time":"2017-07-03"
             },
             {
@@ -30,7 +30,7 @@ const M_Learning = React.createClass({
                 "className":"第一章 第二课时",
                 "cover":"/image/cover/spring.png",
                 "progress":"10%",
-                "href":"/home/classes/class",
+                "href":"/m/classes/class",
                 "time":"2017-07-03"
             },
             {
@@ -38,7 +38,7 @@ const M_Learning = React.createClass({
                 "className":"第一章 第一课时",
                 "cover":"/image/cover/python.png",
                 "progress":"35%",
-                "href":"/home/classes/class",
+                "href":"/m/classes/class",
                 "time":"2017-07-01"
             },
             {
@@ -46,7 +46,7 @@ const M_Learning = React.createClass({
                 "className":"第一章 第一课时",
                 "cover":"/image/cover/javaee.png",
                 "progress":"20%",
-                "href":"/home/classes/class",
+                "href":"/m/classes/class",
                 "time":"2017-07-01"
             },
         ]

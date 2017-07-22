@@ -13,6 +13,8 @@ import {Test} from './routes/test/index';
 import {ErrorPage} from './routes/404/index';
 import { M_IndexPage } from './routes/mobile/index/index'
 import { M_Learning } from './routes/mobile/learning/index';
+import { M_Classes } from './routes/mobile/classes/index';
+import { M_Class } from './routes/mobile/classItem/index';
 
 const App = React.createClass({
     render:function(){
@@ -35,6 +37,9 @@ function RouterConfig({ history }) {
       </Route>
       <Route path="m" component={M_IndexPage}>
         <IndexRoute component={M_Learning} />
+        <Route path="learning" component={M_Learning} />
+        <Route path="classes" component={M_Classes} />
+        <Route path="classes/class" component={M_Class} />
       </Route>      
       <Route path="login" component={Login} />
       <Route path="*" component={ErrorPage} />

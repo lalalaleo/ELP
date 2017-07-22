@@ -7,9 +7,15 @@ const Content = React.createClass({
         this.setState({PageID: val});
     },
     render: function(){
+        const chooseContentStyle=function(){
+            if(this.props.type=='mobile'){
+                return 'm_';
+            }
+            else return;
+        }
         return(
             <Row type="flex" justify="center" align="top" id="content">
-                <Col className="page">
+                <Col className={chooseContentStyle+"page"}>
                     {this.props.children}
                  </Col>
             </Row>

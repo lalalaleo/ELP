@@ -11,7 +11,7 @@ const M_IndexPage = React.createClass({
             return(
                 <div id="index" className="Container">
                     <Header type="mobile" />
-                    <Content>
+                    <Content type='mobile'>
                           {this.props.children}
                     </Content>
                 </div>
