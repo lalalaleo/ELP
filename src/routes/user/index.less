@@ -1,0 +1,40 @@
+#UserPage {
+    .user_layout_item {
+        background-color: white;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,37,55,.05);
+        padding: 20px;
+    }
+    #Profile {
+        
+        .ProfileHeader {
+            .user_layout_item;
+            // padding: 0;
+
+            .profileHeader-avatar {
+                width: 80%;
+                img {
+                    width: 100%;
+                    border-radius: 20px;
+                }
+            }
+        }
+
+        .ProfileContent {
+            .ProfileContent-info{
+                .user_layout_item;
+                span {
+                    &[name='userName']{
+                        font-size: 26px;
+                        font-weight: bold;
+                        margin-right: 20px;
+                    }
+                    &[name='department']{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+    
+}

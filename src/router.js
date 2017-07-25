@@ -9,6 +9,7 @@ import { Login } from './routes/login/index';
 import { Classes } from './routes/classes/index';
 import { Class } from './routes/classItem/index';
 import { Search } from './routes/search/index';
+import { UserPage } from './routes/user/index';
 import {Test} from './routes/test/index';
 import {ErrorPage} from './routes/404/index';
 import { M_IndexPage } from './routes/mobile/index/index'
@@ -32,6 +33,7 @@ function RouterConfig({ history }) {
         <Route path="discover" component={Discover} />
         <Route path="all" component={All} />
         <Route path="search" component={Search} />
+        <Route path="user" component={UserPage} />
         <Route path="classes" component={Classes} />
         <Route path="classes/class" component={Class} />
       </Route>
