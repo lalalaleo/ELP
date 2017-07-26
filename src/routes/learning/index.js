@@ -8,11 +8,24 @@ import {  Row, Col, Timeline, Icon, Tag  } from 'antd'
 const Learning = React.createClass({
     componentDidMount: function(){
         var User = JSON.parse(localStorage.User); 
+        var getHistoryData = this._historyChange;
         var getRecommendData = this._recommendChange;
         var getHotSearchData = this._hotSearchChange;
         $.ajax({
             type: "post",
-            // url: "http://101.70.100.6:9018/elpcon/viewrecommendcourse",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            dataType: "JSON",
+            data: "type=history",
+            success: function(data){
+                    console.log(data);
+                if(data.code==200){
+                    getHistoryData(data.data.history);
+                }
+            },
+        });
+        $.ajax({
+            type: "post",
+            // url: "http://183.246.18.202:9018/elpcon/viewrecommendcourse",
             url: "http://127.0.0.1:8888/midwayIsland/data",
             dataType: "JSON",
             // data: "userId="+User.objectId,
@@ -20,6 +33,7 @@ const Learning = React.createClass({
             success: function(data){
                     console.log(data);
                 if(data.code==200){
+                    // getRecommendData(data.data);
                     getRecommendData(data.data.recommend);
                 }
             },
@@ -41,7 +55,11 @@ const Learning = React.createClass({
         return { 
             recommendData: [],
             hotSearchData: [],
+            historyData: [],
         };
+    },
+    _historyChange: function(data){
+        this.setState({historyData:data});
     },
     _recommendChange: function(data){
         this.setState({recommendData:data});
@@ -51,52 +69,7 @@ const Learning = React.createClass({
     },
     render: function Learning(){
 
-        var historyData = [
-            {
-                "classesName":"Java入门",
-                "classesHref":"/home/classes",
-                "className":"第二章 第二课时",
-                "cover":"/image/cover/java.png",
-                "progress":"85%",
-                "href":"/home/classes/class",
-                "time":"2017-07-04"
-            },
-            {
-                "classesName":"JavaEE理解",
-                "classesHref":"/home/classes",
-                "className":"第一章 第三课时",
-                "cover":"/image/cover/javaee.png",
-                "progress":"5%",
-                "href":"/home/classes/class",
-                "time":"2017-07-03"
-            },
-            {
-                "classesName":"Spring入门",
-                "className":"第一章 第二课时",
-                "cover":"/image/cover/spring.png",
-                "progress":"10%",
-                "href":"/home/classes/class",
-                "time":"2017-07-03"
-            },
-            {
-                "classesName":"Python入门",
-                "className":"第一章 第一课时",
-                "cover":"/image/cover/python.png",
-                "progress":"35%",
-                "href":"/home/classes/class",
-                "time":"2017-07-01"
-            },
-            {
-                "classesName":"JavaEE理解",
-                "className":"第一章 第一课时",
-                "cover":"/image/cover/javaee.png",
-                "progress":"20%",
-                "href":"/home/classes/class",
-                "time":"2017-07-01"
-            },
-        ]
-
-        var HistoryList = historyData.map(function(history){
+        var HistoryList = this.state.historyData.map(function(history){
             return(
                 <HistoryItem data={history}/>
             );
