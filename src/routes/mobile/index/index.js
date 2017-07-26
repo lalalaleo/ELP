@@ -5,11 +5,25 @@ import { Header, IndexToolBar, SegmentCtrl } from '../../../components/layout/he
 import { Content } from '../../../components/layout/content.js';
 import {  Row  } from 'antd'
 
+function getCookie(cookieName){  
+    var cookieContent = '';  
+    var cookieAry = document.cookie.split("; ");//得到Cookie数组  
+    for(var i=0;i<cookieAry.length;i++){  
+        var temp = cookieAry[i].split("=");  
+        if(temp[0] == cookieName){  
+            cookieContent = unescape(temp[1]);  
+        }  
+    }  
+    return cookieContent;
+}
+
 const M_IndexPage = React.createClass({
     render:
         function (){
-            if($(document).width()>1000) window.location.href="/home";
-            else if(sessionStorage.username==null) window.location.href="/login";
+            if(getCookie("JSESSIONID")==''){
+                window.location.href="/login";
+            }
+            else if($(document).width()>1000) window.location.href="/home";
             else{
                 return(
                     <div id="index" className="Container">

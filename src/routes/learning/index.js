@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import React from 'react';
 import styles from './index.less';
 import { HistoryItem } from './components/historyItem';
@@ -5,7 +6,35 @@ import { ClassTag } from './components/classTag';
 import {  Row, Col, Timeline, Icon, Tag  } from 'antd'
 
 const Learning = React.createClass({
+    getInitialState: function(){
+        return { 
+            recommendData: [],
+            hotSearchData: [],
+        };
+    },
+    _recommendChange: function(data){
+        this.setState({recommendData:data});
+    },
     render: function Learning(){
+        var recommendData = [];
+        var User = JSON.parse(localStorage.User); 
+        var getRecommendData = this._recommendChange;
+        // $.ajax({
+        //     type: "post",
+        //     // url: "http://101.70.100.6:9018/elpcon/viewrecommendcourse",
+        //     url: "http://127.0.0.1:8888/midwayIsland/data",
+        //     dataType: "JSON",
+        //     data: "userId="+User.objectId,
+        //     success: function(data){
+        //             console.log(data);
+        //         if(data.code==200){
+        //             recommendData = data.data;
+        //             getRecommendData(data.data);
+        //         }
+        //     },
+        // });
+        
+
         var historyData = [
             {
                 "classesName":"Java入门",
@@ -51,111 +80,61 @@ const Learning = React.createClass({
             },
         ]
 
-        var recommendData = [
-            {
-                color: "yellow",
-                classesName: "SpringCloud入门",
-                classesHref: "/home/classes",
-            },
-            {
-                color: "yellow",
-                classesName: "React入门",
-                classesHref: "/home/classes",
-            },
-            {
-                color: "yellow",
-                classesName: "Spring理解",
-                classesHref: "/home/classes",
-            },
-            {
-                color: "yellow",
-                classesName: "SpringCloud理解",
-                classesHref: "/home/classes",
-            },
-            {
-                color: "yellow",
-                classesName: "JavaEE进阶",
-                classesHref: "/home/classes",
-            },
-            {
-                color: "yellow",
-                classesName: "Python进阶",
-                classesHref: "/home/classes",
-            },
-            {
-                color: "yellow",
-                classesName: "MySQL进阶",
-                classesHref: "/home/classes",
-            },
-            {
-                color: "yellow",
-                classesName: "Spring实战",
-                classesHref: "/home/classes",
-            },
-            {
-                color: "yellow",
-                classesName: "JavaEE实战",
-                classesHref: "/home/classes",
-            },
-            {
-                color: "yellow",
-                classesName: "Java实战",
-                classesHref: "/home/classes",
-            },
-        ]
-
         var hotSearchData = [
             {
                 color: "blue",
-                classesName: "React",
-                classesHref: "/home/classes",
+                courseName: "React",
+                courseUrl: "/home/classes",
             },
             {
                 color: "blue",
-                classesName: "Java",
-                classesHref: "/home/classes",
+                courseName: "Java",
+                courseUrl: "/home/classes",
             },
             {
                 color: "blue",
-                classesName: "MySQL",
-                classesHref: "/home/classes",
+                courseName: "MySQL",
+                courseUrl: "/home/classes",
             },
             {
                 color: "blue",
-                classesName: "PhotoShop",
-                classesHref: "/home/classes",
+                courseName: "PhotoShop",
+                courseUrl: "/home/classes",
             },
             {
                 color: "blue",
-                classesName: "PHP",
-                classesHref: "/home/classes",
+                courseName: "PHP",
+                courseUrl: "/home/classes",
             },
             {
                 color: "blue",
-                classesName: "需求分析",
-                classesHref: "/home/classes",
+                courseName: "需求分析",
+                courseUrl: "/home/classes",
             },
             {
                 color: "blue",
-                classesName: "Express",
-                classesHref: "/home/classes",
+                courseName: "Express",
+                courseUrl: "/home/classes",
             },
             {
                 color: "blue",
-                classesName: "产品设计",
-                classesHref: "/home/classes",
+                courseName: "产品设计",
+                courseUrl: "/home/classes",
             },
             {
                 color: "blue",
-                classesName: "Axure RP",
-                classesHref: "/home/classes",
+                courseName: "Axure RP",
+                courseUrl: "/home/classes",
             },
             {
                 color: "blue",
-                classesName: "JavaEE",
-                classesHref: "/home/classes",
+                courseName: "JavaEE",
+                courseUrl: "/home/classes",
             }
         ]
+
+        // this.setState={recommendData : recommendData};
+        this.state.hotSearchData = hotSearchData;
 
         var HistoryList = historyData.map(function(history){
             return(
@@ -163,13 +142,14 @@ const Learning = React.createClass({
             );
         });
 
-        var recommendTagList = recommendData.map(function(recommend){
+        var recommendTagList = this.state.recommendData.map(function(recommend){
+            recommend.color="yellow";
             return(
                 <ClassTag data={recommend}/>
             );
         });
 
-        var hotSearchTagList = hotSearchData.map(function(recommend){
+        var hotSearchTagList = this.state.hotSearchData.map(function(recommend){
             return(
                 <ClassTag data={recommend}/>
             );

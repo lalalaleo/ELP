@@ -8,9 +8,9 @@ import { Comments } from './components/comments'
 import { ClassList } from '../classes/components/classList'
 import { Icon, Menu, Row, Col, Input, Button } from 'antd'
 
-import PDFObject from '../../utils/pdfobject.min.js'
+import PDFObject from '../../assets/pdfobject.min.js'
 import { Player } from 'video-react'
-import "../../utils/video-react.css"
+import "../../assets/video-react.css"
 
 const Class = React.createClass({
     render: function(){
