@@ -6,6 +6,37 @@ import { ClassTag } from './components/classTag';
 import {  Row, Col, Timeline, Icon, Tag  } from 'antd'
 
 const Learning = React.createClass({
+    componentDidMount: function(){
+        var User = JSON.parse(localStorage.User); 
+        var getRecommendData = this._recommendChange;
+        var getHotSearchData = this._hotSearchChange;
+        $.ajax({
+            type: "post",
+            // url: "http://101.70.100.6:9018/elpcon/viewrecommendcourse",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            dataType: "JSON",
+            // data: "userId="+User.objectId,
+            data: "type=recommend",
+            success: function(data){
+                    console.log(data);
+                if(data.code==200){
+                    getRecommendData(data.data.recommend);
+                }
+            },
+        });
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            dataType: "JSON",
+            data: "type=hotsearch",
+            success: function(data){
+                    console.log(data);
+                if(data.code==200){
+                    getHotSearchData(data.data.hotSearch);
+                }
+            },
+        });
+    },
     getInitialState: function(){
         return { 
             recommendData: [],
@@ -15,25 +46,10 @@ const Learning = React.createClass({
     _recommendChange: function(data){
         this.setState({recommendData:data});
     },
+    _hotSearchChange: function(data){
+        this.setState({hotSearchData:data});
+    },
     render: function Learning(){
-        var recommendData = [];
-        var User = JSON.parse(localStorage.User); 
-        var getRecommendData = this._recommendChange;
-        // $.ajax({
-        //     type: "post",
-        //     // url: "http://101.70.100.6:9018/elpcon/viewrecommendcourse",
-        //     url: "http://127.0.0.1:8888/midwayIsland/data",
-        //     dataType: "JSON",
-        //     data: "userId="+User.objectId,
-        //     success: function(data){
-        //             console.log(data);
-        //         if(data.code==200){
-        //             recommendData = data.data;
-        //             getRecommendData(data.data);
-        //         }
-        //     },
-        // });
-        
 
         var historyData = [
             {
@@ -80,62 +96,6 @@ const Learning = React.createClass({
             },
         ]
 
-        var hotSearchData = [
-            {
-                color: "blue",
-                courseName: "React",
-                courseUrl: "/home/classes",
-            },
-            {
-                color: "blue",
-                courseName: "Java",
-                courseUrl: "/home/classes",
-            },
-            {
-                color: "blue",
-                courseName: "MySQL",
-                courseUrl: "/home/classes",
-            },
-            {
-                color: "blue",
-                courseName: "PhotoShop",
-                courseUrl: "/home/classes",
-            },
-            {
-                color: "blue",
-                courseName: "PHP",
-                courseUrl: "/home/classes",
-            },
-            {
-                color: "blue",
-                courseName: "需求分析",
-                courseUrl: "/home/classes",
-            },
-            {
-                color: "blue",
-                courseName: "Express",
-                courseUrl: "/home/classes",
-            },
-            {
-                color: "blue",
-                courseName: "产品设计",
-                courseUrl: "/home/classes",
-            },
-            {
-                color: "blue",
-                courseName: "Axure RP",
-                courseUrl: "/home/classes",
-            },
-            {
-                color: "blue",
-                courseName: "JavaEE",
-                courseUrl: "/home/classes",
-            }
-        ]
-
-        // this.setState={recommendData : recommendData};
-        this.state.hotSearchData = hotSearchData;
-
         var HistoryList = historyData.map(function(history){
             return(
                 <HistoryItem data={history}/>
@@ -143,15 +103,14 @@ const Learning = React.createClass({
         });
 
         var recommendTagList = this.state.recommendData.map(function(recommend){
-            recommend.color="yellow";
             return(
-                <ClassTag data={recommend}/>
+                <ClassTag data={recommend}  color="yellow" />
             );
         });
 
-        var hotSearchTagList = this.state.hotSearchData.map(function(recommend){
+        var hotSearchTagList = this.state.hotSearchData.map(function(hotSearchItem){
             return(
-                <ClassTag data={recommend}/>
+                <ClassTag data={hotSearchItem} color="blue" />
             );
         });
 
