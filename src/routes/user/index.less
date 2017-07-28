@@ -1,40 +1,96 @@
 #UserPage {
+    width: 100%;
+
     .user_layout_item {
         background-color: white;
         border-radius: 2px;
         box-shadow: 0 1px 3px rgba(0,37,55,.05);
-        padding: 20px;
+        box-sizing: border-box;
     }
-    #Profile {
-        
-        .ProfileHeader {
-            .user_layout_item;
-            // padding: 0;
+    #ProfileHeader{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
 
-            .profileHeader-avatar {
-                width: 80%;
-                img {
-                    width: 100%;
-                    border-radius: 20px;
-                }
-            }
-        }
-
-        .ProfileContent {
-            .ProfileContent-info{
+        #ProfileCard {
+            margin-bottom: 20px;
+            div {
                 .user_layout_item;
-                span {
-                    &[name='userName']{
-                        font-size: 26px;
-                        font-weight: bold;
-                        margin-right: 20px;
+                padding: 40px;
+            }
+        }
+        #ProfileInfo {            
+            .profileInfoItem {
+                padding-left: 10px;
+                padding-right: 10px;
+                &:first-child{
+                    padding-left: 0;
+                }
+                &:last-child{
+                    padding-right: 0;
+                }
+                div {
+                    .user_layout_item;
+                    padding: 20px;
+                    text-align: center;
+
+                    i {
+                        &[name="icon"]{
+                            font-size: 25px;
+                            margin-right: 16px;
+                        }
                     }
-                    &[name='department']{
-                        font-size: 18px;
+                    span {
+                        font-size: 20px;
+                        letter-spacing: 5px;
                     }
                 }
             }
+
+            .studyClassesNum {
+                .profileInfoItem;
+                i {
+                    &[name="icon"]{
+                        color: skyblue;
+                    }
+                }
+            }
+            .studyClassNum {
+                .profileInfoItem;
+                i {
+                    &[name="icon"]{
+                        color: gold;
+                    }
+                }
+            }
+            .studyClassesTime {
+                .profileInfoItem;
+                i {
+                    &[name="icon"]{
+                        color: pink;
+                    }
+                }
+            }
+            .commentNum {
+                .profileInfoItem;
+                i {
+                    &[name="icon"]{
+                        color: tomato;
+                    }
+                }
+            }
+            
         }
     }
-    
+    #ProfileContent {
+        #ProfileActivityChart{
+            .user_layout_item;
+            padding: 20px;
+            width: 70%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
 }
