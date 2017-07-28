@@ -34,7 +34,7 @@ var historyData = [
         "time":"2017-07-01"
     },
     {
-        "classesName":"JavaEE理解",
+        "classesName":"JavaEE进阶",
         "className":"第一章 第一课时",
         "cover":"/image/cover/javaee.png",
         "progress":"20%",

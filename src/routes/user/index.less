@@ -42,7 +42,7 @@
                     }
                     span {
                         font-size: 20px;
-                        letter-spacing: 5px;
+                        letter-spacing: 3px;
                     }
                 }
             }
@@ -86,10 +86,75 @@
         #ProfileActivityChart{
             .user_layout_item;
             padding: 20px;
-            width: 70%;
+            width: 100%;
+            margin-bottom: 20px;
+            p {
+                &[name='title']{
+                    font-size: 15px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
 
-            img {
-                width: 100%;
+        #ProfileCommentHistory {
+            width: 60%;
+            padding-right: 10px;
+            
+            div {
+                &[name='container']{
+                    .user_layout_item;
+                    padding: 20px;
+                }
+            }
+
+            p{
+                &[name='title']{
+                    font-size: 15px;
+                }
+            }
+        }
+
+        #ProfileStudyClasses {
+            width: 40%;
+            padding-left: 10px;
+            div {
+                &[name='container']{
+                    .user_layout_item;
+                    padding: 20px;
+                }
+            }
+            p {
+                &[name='title']{
+                    font-size: 15px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .profileStudyClassesItem {
+                position: relative;
+                padding: 15px 0;
+
+                &:not(:nth-child(2)):after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    display: block;
+                    border-bottom: 1px solid #f0f2f7;
+                    content: "";
+                }
+
+                img {
+                    width: 100px;
+                    height: 60px;
+                    margin-right: 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 3px rgba(0,0,0,.1)
+                }
+                span {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
             }
         }
     }

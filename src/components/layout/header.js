@@ -53,7 +53,7 @@ const IndexToolBar = React.createClass({
                                 <Button  shape="circle" size="large" ><Icon type="message" /></Button>
                             </div>
                             <Button  className="avatar" shape="circle" size="large">
-                                <img  src="/image/test_avatar.png"></img>
+                                <img  src="/image/avatar/test/test_1.png"></img>
                             </Button>
                         </Row>
                     </Col>
