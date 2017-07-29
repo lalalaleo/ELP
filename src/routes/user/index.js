@@ -89,12 +89,7 @@ class UserPage extends React.Component{
         };
     }
     render(){
-        // var testCommentData = [
-        //     {
-        //         classesName: Java
-        //     }
-        // ];
-
+        
         const studyClassesList = this.state.studyClassesData.map(function(classes){
             return(
                 <Row className="profileStudyClassesItem" type="flex" justify="statr" align="middle">
