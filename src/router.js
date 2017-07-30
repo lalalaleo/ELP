@@ -7,6 +7,7 @@ import { All } from './routes/all/index';
 import { Discover } from './routes/discover/index';
 import { Login } from './routes/login/index';
 import { Classes } from './routes/classes/index';
+import { ClassesManage } from './routes/classesManage/index';
 import { Class } from './routes/classItem/index';
 import { Search } from './routes/search/index';
 import { UserPage } from './routes/user/index';
@@ -34,6 +35,7 @@ function RouterConfig({ history }) {
         <Route path="discover" component={Discover} />
         <Route path="all" component={All} />
         <Route path="admin" component={AdminPage} />
+        <Route path="admin/classes" component={ClassesManage} />
         <Route path="search" component={Search} />
         <Route path="user" component={UserPage} />
         <Route path="classes" component={Classes} />

@@ -121,21 +121,21 @@ class UserPage extends React.Component{
                                 <div>
                                     <Icon name="icon" type="book" />
                                     <span>课程：</span>
-                                    <span>5</span>
+                                    <span>1</span>
                                 </div>
                             </Col>
                             <Col span={5} className="studyClassNum">
                                 <div>
                                     <Icon name="icon" type="file-text" />
                                     <span>课时：</span>
-                                    <span>57</span>
+                                    <span>4</span>
                                 </div>
                             </Col>
                             <Col span={9} className="studyClassesTime">
                                 <div>
                                     <Icon name="icon" type="clock-circle-o" />
                                     <span>时间：</span>
-                                    <span>11 : 14 : 27</span>
+                                    <span>0 : 34 : 27</span>
                                 </div>
                             </Col>
                             <Col span={5} className="commentNum">

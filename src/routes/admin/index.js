@@ -33,17 +33,19 @@ class AdminPage extends Component {
                         <Row className="ctrl" type="flex" justify="end">
                             <Button type="default">管理</Button>
                         </Row>
-                        <Row className="header" type="flex" justify="start">
-                            <Col>
-                                <img src="/image/cover/java.png" />
-                            </Col>
-                        </Row>
-                        <Row className="content" type="flex" justify="start">
-                            <Row>
-                                <p name="title">Java 入门</p>
+                        <Row className="classesInfo">
+                            <Row className="header" type="flex" justify="start">
+                                <Col>
+                                    <img src="/image/cover/java.png" />
+                                </Col>
                             </Row>
-                            <Row>
-                                <p name="info">Java是一种跨平台的语言，一次编写，到处运行，在世界编程语言排行榜中稳居第二名（第一名是C语言）。Java用途广泛，可以用来开发传统的客户端软件和网站后台，也可以开发Android 应用和云计算平台。</p>
+                            <Row className="content" type="flex" justify="start">
+                                <Row>
+                                    <p name="title">Java 入门</p>
+                                </Row>
+                                <Row>
+                                    <p name="info">Java是一种跨平台的语言，一次编写，到处运行，在世界编程语言排行榜中稳居第二名（第一名是C语言）。Java用途广泛，可以用来开发传统的客户端软件和网站后台，也可以开发Android 应用和云计算平台。</p>
+                                </Row>
                             </Row>
                         </Row>
                     </Col>
