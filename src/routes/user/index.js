@@ -109,9 +109,9 @@ class UserPage extends React.Component{
                     <Col id="ProfileCard" span="24">
                         <div>
                             <center>
-                                <img src="/image/avatar/test/test_1.png" style={{width:120,height:120,marginBottom:15,borderTopLeftRadius:999,borderTopRightRadius:999,borderBottomLeftRadius:999,borderBottomRightRadius:999}} />
-                                <p style={{fontSize:32,fontWeight:"bold",color:"black",marginBottom:10}}>林罡</p>
-                                <p style={{fontSize:15,color:"black"}}>后端部门</p>
+                                <img src="/image/avatar/test/test_1.png" />
+                                <p name="userName">林罡</p>
+                                <p name="department">后端部门</p>
                             </center>
                         </div>
                     </Col>
