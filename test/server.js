@@ -5,6 +5,8 @@ var url = require('url');
 var path = require('path');
 
 var testData = require('./testData.js');
+var testUser = require('./testUser.js');
+
 
 
 app.all('*', function(req, res, next) {
@@ -23,13 +25,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.post('/midwayIsland/user', function (req, res) {
-  	console.log("success");
-  if(req.body.type=='login'){
-  	console.log("ok");
-  }
-  	res.send({result:'ok'});
-});
 
 app.post('/midwayIsland/data',function(req, res) {
 	if(req.body.type=='learning'){
@@ -49,6 +44,14 @@ app.post('/midwayIsland/data',function(req, res) {
 	}
 	else if(req.body.type=='hotsearch'){
 		testData.hotSearch(function(msg){
+      		res.send(msg);
+    	});
+	}
+});
+
+app.post('/midwayIsland/user',function(req, res) {
+	if(req.body.type=='login'){
+		testUser.login(function(msg){
       		res.send(msg);
     	});
 	}
