@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { browserHistory } from 'react-router'
 import styles from './header.less'
 import {  Row, Col,  Input, Button, Icon, Radio } from 'antd'
 
@@ -24,7 +25,11 @@ const IndexToolBar = React.createClass({
             $("#coverLayer").remove();
         }
         function btnSaerch(){
-            window.location.href="/home/search";
+            var searchInfo = $("#SearchInput").val();
+            browserHistory.push({
+                pathname:'/home/search',
+                state:{searchInfo:searchInfo}
+            });
         }
         return (
             <Row type="flex" justify="center" align="middle" className="indexToolBar">
@@ -42,7 +47,7 @@ const IndexToolBar = React.createClass({
                     {/*搜索框*/}
                     <Col span="9">
                         <InputGroup className="search">
-                            <Input size="large" placeholder="搜索"></Input>
+                            <Input id="SearchInput" size="large" placeholder="搜索"></Input>
                             <Button type="primary" size="large" onClick={btnSaerch}><Icon type="search" /></Button>
                         </InputGroup>
                     </Col>

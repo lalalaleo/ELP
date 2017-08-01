@@ -412,4 +412,15 @@ exports.shareComment = function(content,fn){
     arr.reverse();
     fn({code:200,result:'ok',data:{"commentsList":arr}});
 }
+exports.search = function(searchInfo,fn){
+    var arr = test_ClassesData.concat(test_ClassesData2);
+    var arr2 = [];
+    for(var i in arr){
+        var classesName = arr[i].name;
+        if(classesName.indexOf(searchInfo)>=0){
+            arr2.push(arr[i]);
+        }
+    }
+    fn({code:200,result:'ok',data:{"result":arr2}});
+}
 
