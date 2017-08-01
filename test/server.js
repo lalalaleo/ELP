@@ -51,7 +51,7 @@ app.post('/midwayIsland/data',function(req, res) {
 
 app.post('/midwayIsland/user',function(req, res) {
 	if(req.body.type=='login'){
-		testUser.login(function(msg){
+		testUser.login(req.body.logId,req.body.pwd,function(msg){
       		res.send(msg);
     	});
 	}
