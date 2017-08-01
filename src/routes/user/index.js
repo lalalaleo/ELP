@@ -35,7 +35,8 @@ class UserPage extends React.Component{
         // ajax
         $.ajax({
             type: "post",
-            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://127.0.0.1:8888/midwayIsland/data",
+            url: "http://192.168.100.192:8888/midwayIsland/data",
             dataType: "JSON",
             data: "type=history",
             success: function(data){

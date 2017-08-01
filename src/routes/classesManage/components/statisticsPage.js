@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import React, { Component } from 'react';
 import styles from './statisticsPage.less'
 import { Row, Col, Radio } from 'antd'
@@ -17,7 +18,11 @@ require('echarts/lib/component/title') //标题插件
 class StatisticsPage extends Component {
     constructor(props){
         super(props);
-        this.setOption = this.setOption.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.setOption = this.setOption.bind(this);
+        this.state = {
+            cId: 1
+        };
     }
     componentDidMount(){
         function getVirtulData(year) {
@@ -37,7 +42,27 @@ class StatisticsPage extends Component {
         var data = getVirtulData(2016);
 
         let myChart = echarts.init(this.refs.myChart)
-        let options = this.setOption(data,2)
+        let options = this.setOption(data,this.state.cId)
+        myChart.setOption(options)
+    }
+    componentDidUpdate(){
+        function getVirtulData(year) {
+            year = year || '2017';
+            var date = +echarts.number.parseDate(year + '-01-01');
+            var end = +echarts.number.parseDate((+year + 1) + '-01-01');
+            var dayTime = 3600 * 24 * 1000;
+            var data = [];
+            for (var time = date; time < end; time += dayTime) {
+                data.push([
+                    echarts.format.formatTime('yyyy-MM-dd', time),
+                    Math.floor(Math.random() * 10000)
+                ]);
+            }
+            return data;
+        }
+        var data = getVirtulData(2016);
+        let myChart = echarts.init(this.refs.myChart)
+        let options = this.setOption(data,this.state.cId)
         myChart.setOption(options)
     }
     setOption(data,type){
@@ -50,162 +75,6 @@ class StatisticsPage extends Component {
         }
         switch(type){
             case 1:
-                return{
-                    backgroundColor: '#404a59',
-                    title: {
-                        top: 30,
-                        text: '2016年某人每天的步数',
-                        subtext: '数据纯属虚构',
-                        left: 'center',
-                        textStyle: {
-                            color: '#fff'
-                        }
-                    },
-                    tooltip : {
-                        trigger: 'item'
-                    },
-                    legend: {   
-                        top: '30',
-                        left: '100',
-                        data:['步数', 'Top 12'],
-                        textStyle: {
-                            color: '#fff'
-                        }
-                    },
-                    calendar: [{
-                        top: 100,
-                        left: 'center',
-                        range: ['2016-01-01', '2016-06-30'],
-                        splitLine: {
-                            show: true,
-                            lineStyle: {
-                                color: '#000',
-                                width: 4,
-                                type: 'solid'
-                            }
-                        },
-                        yearLabel: {
-                            formatter: '{start}  1st',
-                            textStyle: {
-                                color: '#fff'
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                color: '#323c48',
-                                borderWidth: 1,
-                                borderColor: '#111'
-                            }
-                        }
-                    }, {
-                        top: 340,
-                        left: 'center',
-                        range: ['2016-07-01', '2016-12-31'],
-                        splitLine: {
-                            show: true,
-                            lineStyle: {
-                                color: '#000',
-                                width: 4,
-                                type: 'solid'
-                            }
-                        },
-                        yearLabel: {
-                            formatter: '{start}  2nd',
-                            textStyle: {
-                                color: '#fff'
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                color: '#323c48',
-                                borderWidth: 1,
-                                borderColor: '#111'
-                            }
-                        }
-                    }],
-                    series : [
-                        {
-                            name: '步数',
-                            type: 'scatter',
-                            coordinateSystem: 'calendar',
-                            data: data,
-                            symbolSize: function (val) {
-                                return val[1] / 500;
-                            },
-                            itemStyle: {
-                                normal: {
-                                    color: '#ddb926'
-                                }
-                            }
-                        },
-                        {
-                            name: '步数',
-                            type: 'scatter',
-                            coordinateSystem: 'calendar',
-                            calendarIndex: 1,
-                            data: data,
-                            symbolSize: function (val) {
-                                return val[1] / 500;
-                            },
-                            itemStyle: {
-                                normal: {
-                                    color: '#ddb926'
-                                }
-                            }
-                        },
-                        {
-                            name: 'Top 12',
-                            type: 'effectScatter',
-                            coordinateSystem: 'calendar',
-                            calendarIndex: 1,
-                            data: data.sort(function (a, b) {
-                                return b[1] - a[1];
-                            }).slice(0, 12),
-                            symbolSize: function (val) {
-                                return val[1] / 500;
-                            },
-                            showEffectOn: 'render',
-                            rippleEffect: {
-                                brushType: 'stroke'
-                            },
-                            hoverAnimation: true,
-                            itemStyle: {
-                                normal: {
-                                    color: '#f4e925',
-                                    shadowBlur: 10,
-                                    shadowColor: '#333'
-                                }
-                            },
-                            zlevel: 1
-                        },
-                        {
-                            name: 'Top 12',
-                            type: 'effectScatter',
-                            coordinateSystem: 'calendar',
-                            data: data.sort(function (a, b) {
-                                return b[1] - a[1];
-                            }).slice(0, 12),
-                            symbolSize: function (val) {
-                                return val[1] / 500;
-                            },
-                            showEffectOn: 'render',
-                            rippleEffect: {
-                                brushType: 'stroke'
-                            },
-                            hoverAnimation: true,
-                            itemStyle: {
-                                normal: {
-                                    color: '#f4e925',
-                                    shadowBlur: 10,
-                                    shadowColor: '#333'
-                                }
-                            },
-                            zlevel: 1
-                        }
-                    ]
-                };
-                break;
-            case 2:
                 return{
                     title : {
                         text: '各职位学员比例',
@@ -258,7 +127,7 @@ class StatisticsPage extends Component {
                     ]
                 };
                 break;
-            case 3:
+            case 2:
                 return{
                     color: colors,
                     title: [{
@@ -346,23 +215,23 @@ class StatisticsPage extends Component {
         }
     
     }
+    handleChange(e){
+        this.setState({cId:(e.target.value)});
+    }
     render() {
         return (
             <Row id="StatisticsPage">
                 <Row id="StatisticsMenu" type="flex" justify="center">
-                    <RadioGroup defaultValue="a" size="large">
-                        <RadioButton value="a">学习情况</RadioButton>
-                        <RadioButton value="b">学员比例</RadioButton>
-                        {/* <RadioButton value="c">Beijing</RadioButton> */}
-                        {/* <RadioButton value="d">Chengdu</RadioButton> */}
+                    <RadioGroup defaultValue={this.state.cId} size="large" onChange={this.handleChange}>
+                        <RadioButton value={1}>学习情况</RadioButton>
+                        <RadioButton value={2}>学员比例</RadioButton>
                     </RadioGroup>
                 </Row>
                 <Row>
-                    <div ref="myChart" style={{width:"100%",height:"600px"}}></div>
+                    <div id="MyChart" ref="myChart" style={{width:"100%",height:"600px"}}></div>
                 </Row>
             </Row>
         );
     }
 }
-
 export { StatisticsPage };

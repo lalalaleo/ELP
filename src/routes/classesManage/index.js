@@ -3,6 +3,7 @@ import styles from './index.less'
 import { Row, Col, Icon, Menu, Button, Tabs } from 'antd'
 import { StudentsPage } from './components/studentsPage.js'
 import { StatisticsPage } from './components/statisticsPage.js'
+import { ClassManage } from './components/classManage.js'
 
 
 const TabPane = Tabs.TabPane;
@@ -25,7 +26,7 @@ class ClassesManage extends Component {
                     <Tabs defaultActiveKey="1" onChange="">
                         <TabPane tab="学员" key="1"><StudentsPage /></TabPane>
                         <TabPane tab="统计" key="2"><StatisticsPage /></TabPane>
-                        <TabPane tab="课时管理" key="3">Content of Tab Pane 3</TabPane>
+                        <TabPane tab="课时管理" key="3"><ClassManage /></TabPane>
                     </Tabs>
                 </Row>
             </Row>
