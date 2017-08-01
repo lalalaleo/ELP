@@ -6,13 +6,55 @@ import { Header,IndexToolBar } from '../../components/layout/header'
 import { Content } from '../../components/layout/content'
 import { Comments } from './components/comments'
 import { ClassList } from '../classes/components/classList'
-import { Icon, Menu, Row, Col, Input, Button } from 'antd'
+import { Icon, Menu, Row, Col, Input, Button, message } from 'antd'
 
 import PDFObject from '../../assets/pdfobject.min.js'
 import { Player } from 'video-react'
 import "../../assets/video-react.css"
-
 const Class = React.createClass({
+    componentDidMount:function(){
+        var commnetsListChange = this.commnetsListChange;
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://192.168.100.192:8888/midwayIsland/data",
+            dataType: "JSON",
+            data: "type=commentsList",
+            success: function(data){
+                if(data.code==200){
+                    commnetsListChange(data.data.commentsList);
+                }
+            },
+        });
+    },
+    getInitialState: function(){
+        return{
+            commnetsList:[],
+        }
+    },
+    commnetsListChange: function(data){
+        this.setState({
+            commnetsList:data
+        });
+    },
+    shareComments: function(data){
+        var commnetsListChange = this.commnetsListChange;
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://192.168.100.192:8888/midwayIsland/data",
+            dataType: "JSON",
+            data: "type=shareComment&&content="+$("#commentTextArea").val(),
+            success: function(data){
+                console.log(data);
+                if(data.code==200){
+                    commnetsListChange(data.data.commentsList);
+                    $("#commentTextArea").val("");
+                    message.success('发布成功');
+                }
+            },
+        });
+    },
     render: function(){
         // $("#page_content").ready(function(){
         //     PDFObject.embed("/files/test.pdf", "#Class_content",{width: "100%"});
@@ -85,14 +127,14 @@ const Class = React.createClass({
                     
                         <Col id="Class_comment_textarea" className="page_content_item">
                             <Row>
-                                <Input type="textarea" placeholder="写下你的评论" autosize={{ minRows: 3, maxRows: 8 }} />
+                                <Input id="commentTextArea" type="textarea" placeholder="写下你的评论" autosize={{ minRows: 3, maxRows: 8 }} />
                                 </Row>
                                 <Row type="flex" justify="end" align="center">
-                                <Button type="primary" size="small">发送</Button>
+                                <Button type="primary" size="small" onClick={this.shareComments}>发送</Button>
                                 </Row>
                         </Col>
                         <Col id="Class_comments" className="page_content_item">
-                            <Comments />
+                            <Comments data={this.state.commnetsList} />
                         </Col>
 
                     </Col>

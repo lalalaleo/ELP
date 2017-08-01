@@ -307,6 +307,48 @@ var test_studentData = [
         department:'测试',
     },
 ]
+var test_CommentsData = [
+    {
+        id: '1',
+        sender: {
+            name: '林罡',
+            avatar: '/image/avatar/test/test_1.png',
+        },
+        answerID: '',
+        content: '其实很多人觉得难懂。我是觉得听不懂的你就多听听，去别的网站上面听，很多东西除非是天才，不然像第一次听你就听懂还是有难度的，我就是这种学习网站多找几个，一个内容听不懂就多去听不同版本的讲解，不要觉得累，学习源于热爱，汗水是不会骗人的，想要学得好就要花功夫，还有要自己动手打代码！！！！！',
+        time:"两天前",
+    },
+    {
+        id: '2',
+        sender: {
+            name: '陈文军',
+            avatar: '/image/avatar/test/test_2.png',
+        },
+        answerID: '1',
+        content: '自定义异常一般适用于大工程  所以对我等菜鸟来说  很少能见到   所以这一章只是了解就行',
+        time:"一天前",
+    },
+    {
+        id: '3',
+        sender: {
+            name: '杨攻',
+            avatar: '/image/avatar/test/test_3.png',
+        },
+        answerID: '',
+        content: '老师非常的棒，我是先看书再看这个视频正好起到相辅相成的作用，感谢。',
+        time:"3小时",
+    },
+    {
+        id: '4',
+        sender: {
+            name: '林罡',
+            avatar: '/image/avatar/test/test_1.png',
+        },
+        answerID: '2',
+        content: '确实是这样',
+        time:"16分钟",
+    },
+]
 function getRandomArrayElements(arr, count) {
     var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
     while (i-- > min) {
@@ -349,3 +391,25 @@ exports.classList4 = function(fn){
     arr = getRandomArrayElements(arr,4);
     fn({code:200,result:'ok',data:{"classList":arr}});
 }
+exports.commentsList = function(fn){
+    var arr = test_CommentsData.slice();
+    arr.reverse();
+    fn({code:200,result:'ok',data:{"commentsList":arr}});
+}
+exports.shareComment = function(content,fn){
+    var comment = {
+        sender: {
+            name: '林罡',
+            avatar: '/image/avatar/test/test_1.png',
+        },
+        answerID: '',
+        time:"刚刚",
+    }
+    comment.id=(test_CommentsData.length+1)+"";
+    comment.content = content;
+    test_CommentsData.push(comment);
+    var arr = test_CommentsData.slice();
+    arr.reverse();
+    fn({code:200,result:'ok',data:{"commentsList":arr}});
+}
+

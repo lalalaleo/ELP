@@ -72,6 +72,16 @@ app.post('/midwayIsland/data',function(req, res) {
       		res.send(msg);
     	});
 	}
+	else if(req.body.type=='commentsList'){
+		testData.commentsList(function(msg){
+      		res.send(msg);
+    	});
+	}
+	else if(req.body.type=='shareComment'){
+		testData.shareComment(req.body.content,function(msg){
+      		res.send(msg);
+    	});
+	}
 });
 
 app.post('/midwayIsland/user',function(req, res) {
