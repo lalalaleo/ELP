@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import React from 'react'
 import style from './index.less'
 import { Header,IndexToolBar } from '../../components/layout/header'
@@ -7,30 +8,91 @@ import { UserList } from '../discover/components/userList'
 import { Icon, Row, Col } from 'antd'
 
 const Classes = React.createClass({
+    componentDidMount: function(){
+        var userListChange = this.userListChange;
+        var classListChange = this.classListChange;
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://192.168.100.192:8888/midwayIsland/data",
+            dataType: "JSON",
+            data: "type=userList4",
+            success: function(data){
+                    console.log(data);
+                if(data.code==200){
+                    userListChange(data.data.userList);
+                }
+            },
+        });
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://192.168.100.192:8888/midwayIsland/data",
+            dataType: "JSON",
+            data: "type=classList4",
+            success: function(data){
+                console.log(data);
+                if(data.code==200){
+                    classListChange(data.data.classList);
+                }
+            },
+        });
+    },
+    getInitialState: function(){
+        return {
+            userList: [ ],
+            classList: [ ],
+        }
+    },
+    classListChange: function(data){
+        this.setState({
+            classList: data,
+        });
+    },
+    userListChange: function(data){
+        this.setState({
+            userList: data,
+        });
+    },
+    shuffledClassList: function(){
+        var classListChange = this.classListChange;
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://192.168.100.192:8888/midwayIsland/data",
+            dataType: "JSON",
+            data: "type=classList4",
+            success: function(data){
+                if(data.code==200){
+                    classListChange(data.data.classList);
+                }
+            },
+        });
+    },
+    shuffledStudentList: function(){
+        var userListChange = this.userListChange;
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://192.168.100.192:8888/midwayIsland/data",
+            dataType: "JSON",
+            data: "type=userList4",
+            success: function(data){
+                if(data.code==200){
+                    userListChange(data.data.userList);
+                }
+            },
+        });
+    },
     render: function(){
-
-        const test_studentData = [
-            {
-                avatar:'/image/avatar/test/test_1.png',
-                name:'林罡',
-                department:'后端',
-            },
-            {
-                avatar:'/image/avatar/test/test_2.png',
-                name:'陈文军',
-                department:'后端',
-            },
-            {
-                avatar:'/image/avatar/test/test_9.png',
-                name:'石丹云',
-                department:'后端',
-            },
-            {
-                avatar:'/image/avatar/test/test_10.png',
-                name:'朱克然',
-                department:'后端',
-            },
-        ]
+        var classList = this.state.classList.map(function(Classes){
+            return(
+                <Col span="5" className="class_correlation_item">
+                    <img src={Classes.cover} />
+                    <h4>{Classes.name}</h4>
+                </Col>
+            );
+        });
 
         return (
             <div id="Classes" className="page_content">
@@ -63,9 +125,9 @@ const Classes = React.createClass({
                             <Row style={{marginBottom:10}}>
                                 <h3>学习这门课的学员</h3>
                             </Row>
-                            <UserList data={ test_studentData } />
+                            <UserList data={ this.state.userList } />
                             <Row type="flex" justify="end" align="top">
-                                <a>换一批</a>
+                                <a onClick={ this.shuffledStudentList }>换一批</a>
                             </Row>
                         </div>
                         <div id="Classes_correlation" className="page_content_item">
@@ -73,13 +135,10 @@ const Classes = React.createClass({
                                 <h3>相关课程</h3>
                             </Row>
                             <Row  type="flex" justify="space-around" align="top" style={{marginBottom:10}}>
-                                <Col span="5" className="class_correlation_item"><img src="/image/cover/javaee.png" /><h4>JavaEE理解</h4></Col>
-                                <Col span="5" className="class_correlation_item"><img src="/image/cover/spring.png" /><h4>Spring入门</h4></Col>
-                                <Col span="5" className="class_correlation_item"><img src="/image/cover/spring_cloud.png" /><h4>SpringCloud进阶</h4></Col>
-                                <Col span="5" className="class_correlation_item"><img src="/image/cover/python.png" /><h4>Python实战</h4></Col>
+                                { classList }
                             </Row>
                             <Row type="flex" justify="end" align="top">
-                                <a>换一批</a>
+                                <a onClick={ this.shuffledClassList }>换一批</a>
                             </Row>
                         </div>
                     </Col>

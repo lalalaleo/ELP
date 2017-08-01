@@ -62,6 +62,16 @@ app.post('/midwayIsland/data',function(req, res) {
       		res.send(msg);
     	});
 	}
+	else if(req.body.type=='userList4'){
+		testData.userList4(function(msg){
+      		res.send(msg);
+    	});
+	}
+	else if(req.body.type=='classList4'){
+		testData.classList4(function(msg){
+      		res.send(msg);
+    	});
+	}
 });
 
 app.post('/midwayIsland/user',function(req, res) {

@@ -270,6 +270,53 @@ var hotSearchData = [
         courseUrl: "/home/classes",
     }
 ]
+var test_studentData = [
+    {
+        avatar:'/image/avatar/test/test_1.png',
+        name:'林罡',
+        department:'后端',
+    },
+    {
+        avatar:'/image/avatar/test/test_2.png',
+        name:'陈文军',
+        department:'后端',
+    },
+    {
+        avatar:'/image/avatar/test/test_9.png',
+        name:'石丹云',
+        department:'后端',
+    },
+    {
+        avatar:'/image/avatar/test/test_10.png',
+        name:'朱克然',
+        department:'后端',
+    },
+    {
+        avatar:'/image/avatar/test/test_3.png',
+        name:'杨攻',
+        department:'前端',
+    },
+    {
+        avatar:'/image/avatar/test/test_4.png',
+        name:'连君龙',
+        department:'数据库',
+    },
+    {
+        avatar:'/image/avatar/test/test_7.png',
+        name:'韩悦',
+        department:'测试',
+    },
+]
+function getRandomArrayElements(arr, count) {
+    var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
+    while (i-- > min) {
+    index = Math.floor((i + 1) * Math.random());
+    temp = shuffled[index];
+    shuffled[index] = shuffled[i];
+    shuffled[i] = temp;
+    }
+    return shuffled.slice(min);
+}
 exports.history = function(fn){
     fn({code:200,result:'ok',data:{"history":historyData}});
 }
@@ -292,4 +339,13 @@ exports.allNewAEClasses = function(fn){
 }
 exports.allHotFEClasses = function(fn){
     fn({code:200,result:'ok',data:{"classesList":test_ClassesData2}});
+}
+exports.userList4 = function(fn){
+    var arr = getRandomArrayElements(test_studentData,4);
+    fn({code:200,result:'ok',data:{"userList":arr}});
+}
+exports.classList4 = function(fn){
+    var arr = test_ClassesData.concat(test_ClassesData2);
+    arr = getRandomArrayElements(arr,4);
+    fn({code:200,result:'ok',data:{"classList":arr}});
 }
