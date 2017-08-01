@@ -21,11 +21,13 @@ const UserItem = React.createClass({
     render: function(){
         return(
             <div className="userItem">
+                <a href="/home/user">
                 <center>
                     <img src={ this.props.data.avatar } />
                     <p name='name'>{ this.props.data.name }</p>
                     <p name='department'>{ this.props.data.department }</p>
                 </center>
+                </a>
             </div>
         );
     }
