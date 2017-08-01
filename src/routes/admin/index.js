@@ -4,6 +4,9 @@ import { Row, Col, Icon, Menu, Button } from 'antd'
 
 class AdminPage extends Component {
     render() {
+        function LinkHref(){
+            window.location.href="/home/admin/classes";
+        }
         return (
             <Row id="AdminPage" className="page_content">
                 <Row type="flex" justify="center" id="Profile">
@@ -31,7 +34,7 @@ class AdminPage extends Component {
                     </Col>
                     <Col className="adminClassesContent" span="19">
                         <Row className="ctrl" type="flex" justify="end">
-                            <Button type="default">管理</Button>
+                            <Button type="default" onClick={LinkHref}>管理</Button>
                         </Row>
                         <Row className="classesInfo">
                             <Row className="header" type="flex" justify="start">
