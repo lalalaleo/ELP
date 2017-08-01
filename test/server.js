@@ -47,6 +47,21 @@ app.post('/midwayIsland/data',function(req, res) {
       		res.send(msg);
     	});
 	}
+	else if(req.body.type=='hotAE'){
+		testData.allHotAEClasses(function(msg){
+      		res.send(msg);
+    	});
+	}
+	else if(req.body.type=='newAE'){
+		testData.allNewAEClasses(function(msg){
+      		res.send(msg);
+    	});
+	}
+	else if(req.body.type=='hotFE'){
+		testData.allHotFEClasses(function(msg){
+      		res.send(msg);
+    	});
+	}
 });
 
 app.post('/midwayIsland/user',function(req, res) {

@@ -25,9 +25,12 @@ const ClassesList = React.createClass({
                 data[i].key = no++;
                 data[i].cover = <img src={data[i].cover} />;
                 data[i].name = <h4>{data[i].name}</h4>;
-                data[i].info = <p>{data[i].info}</p>
+                data[i].info = <p>{data[i].info}</p>;
             }
             return data;
+        }
+        function linkHref (){
+            window.location.href="/home/classes";
         }
         return(
             <Row id="ClassesList">
@@ -36,7 +39,8 @@ const ClassesList = React.createClass({
                     dataSource={handleData(this.props.data)} 
                     size="small" 
                     showHeader={false} 
-                    pagination={{pageSize:this.props.pageSize}} 
+                    pagination={{pageSize:this.props.pageSize}}
+                    onRowClick={ linkHref }
                 />
             </Row>
         );
