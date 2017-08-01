@@ -90,10 +90,12 @@ class UserPage extends React.Component{
         };
     }
     render(){
-        
+        function LinkHref(){
+            window.location.href="/home/classes"
+        }
         const studyClassesList = this.state.studyClassesData.map(function(classes){
             return(
-                <Row className="profileStudyClassesItem" type="flex" justify="statr" align="middle">
+                <Row className="profileStudyClassesItem" type="flex" justify="statr" align="middle" onClick={LinkHref}>
                     <Col>
                         <img src={classes.cover} />
                     </Col>

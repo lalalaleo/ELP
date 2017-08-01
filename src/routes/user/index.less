@@ -140,19 +140,23 @@
             div {
                 &[name='container']{
                     .user_layout_item;
-                    padding: 20px;
+                    padding: 20px 0;
                 }
             }
             p {
                 &[name='title']{
                     font-size: 15px;
+                    margin-left: 20px;
                     margin-bottom: 10px;
                 }
             }
 
             .profileStudyClassesItem {
                 position: relative;
-                padding: 15px 0;
+                padding: 15px 20px;
+                &:hover {
+                    background-color: rgba(0,180,240,0.1);
+                }
 
                 &:not(:nth-child(2)):after {
                     position: absolute;
