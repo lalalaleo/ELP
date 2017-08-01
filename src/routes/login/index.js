@@ -28,8 +28,8 @@ const Login = React.createClass({
                 $.ajax({
                     type: "post",
                     // url: "http://101.70.100.6:9018/elpcon/login",
-                    // url: "http://127.0.0.1:8888/midwayIsland/user",
-                    url: "http://192.168.100.192:8888/midwayIsland/user",
+                    url: "http://127.0.0.1:8888/midwayIsland/user",
+                    // url: "http://192.168.100.192:8888/midwayIsland/user",
                     dataType: "JSON",
                     // data: "logId="+logId+"&&pwd="+pwd,
                     data: "type=login&logId="+logId+"&pwd="+pwd,

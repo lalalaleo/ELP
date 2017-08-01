@@ -23,7 +23,9 @@ const HistoryItem = React.createClass({
                 </Col>
                 <Col span={1}>
                     <Row type="flex" justify="center" align="middle"className="delete">
-                        <Icon type="delete" size="large" />
+                        <a className="btnDelete" onClick={()=>this.props.historyDelete(this.props.data.classesName)}>
+                            <Icon  type="delete" size="large" />
+                        </a>
                     </Row>
                 </Col>
             </Timeline.Item>
