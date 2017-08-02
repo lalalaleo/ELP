@@ -375,7 +375,7 @@ class ClassManage extends Component {
                             </center>
                         </Col>
                         <Col span="18" className="content">
-                            <Input type="textarea" placeholder="写下你的评论" autosize={{ minRows: 5, maxRows: 10 }} defaultValue="异常指不期而至的各种状况，如：文件找不到、网络连接失败、非法参数等。异常是一个事件，它发生在程序运行期间，干扰了正常的指令流程。Java通 过API中Throwable类的众多子类描述各种不同的异常。因而，Java异常都是对象，是Throwable子类的实例，描述了出现在一段编码中的 错误条件。当条件生成时，错误将引发异常。" />
+                            <Input type="textarea" placeholder="请输入课时简介" autosize={{ minRows: 5, maxRows: 10 }} defaultValue="异常指不期而至的各种状况，如：文件找不到、网络连接失败、非法参数等。异常是一个事件，它发生在程序运行期间，干扰了正常的指令流程。Java通 过API中Throwable类的众多子类描述各种不同的异常。因而，Java异常都是对象，是Throwable子类的实例，描述了出现在一段编码中的 错误条件。当条件生成时，错误将引发异常。" />
                         </Col>
                     </Row>
 
