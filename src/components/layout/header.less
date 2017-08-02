@@ -75,7 +75,8 @@
         .message {
             width: 100%;
             height: 300px;
-            background-color: white;
+            // background-color: white;
+            background-color: #f8f8f8;
             position: absolute;
             top: 18px;
             border: 1px solid #e7eaf1;
@@ -83,12 +84,49 @@
             box-shadow: 0 5px 20px rgba(0,34,77,.1);
             
             .messageHeader {
+            background-color: white;                
                 box-shadow: 0 1px 1px rgba(0,34,77,.05);
                 h3 {
                     font-size: 16px;
                     text-align: center;
                     color: rgba(0,0,0,0.4);
                     line-height: 30px;
+                }
+            }
+            .messageContent {
+                padding: 5px;
+                
+                .messageItem {
+                    background-color: white;                                    
+                    box-shadow: 0 0 5px rgba(0,34,77,.1);
+                    padding: 5px;
+                    color: rgba(0,0,0,0.87);
+                    &:hover {
+                        background-color: rgba(0, 180, 255, 0.1);
+                        color: rgba(0,0,0,0.7);                        
+                    }
+                    .mAvatar {
+                        img {
+                            width: 100%;
+                            border-radius: 999px;
+                        }
+                    }
+                    .mContent {
+                        p {
+                            &[name="userName"]{
+                                font-size: 13px;
+                                margin-bottom: 3px;
+                            }
+                            &[name="content"]{
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                    .mTime {
+                        p {
+                            text-align: right;
+                        }
+                    }
                 }
             }
         }

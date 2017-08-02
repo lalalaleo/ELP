@@ -31,6 +31,9 @@ const IndexToolBar = React.createClass({
                 state:{searchInfo:searchInfo}
             });
         }
+        function LinkToAdmin(){
+            window.location.href="/home/admin";
+        }
         return (
             <Row type="flex" justify="center" align="middle" className="indexToolBar">
                 <Row type="flex" justify="space-around" align="middle" className="toolBar">
@@ -57,7 +60,7 @@ const IndexToolBar = React.createClass({
                             <div id="messageIcon" onClick ={messageShow}>
                                 <Button  shape="circle" size="large" ><Icon type="message" /></Button>
                             </div>
-                            <Button  className="avatar" shape="circle" size="large">
+                            <Button  className="avatar" shape="circle" size="large" onClick={LinkToAdmin}>
                                 <img  src="/image/avatar/test/test_1.png"></img>
                             </Button>
                         </Row>
@@ -97,13 +100,58 @@ const SegmentCtrl = React.createClass({
 
 const Message = React.createClass({
    render: function(){
-       return(
-           <div className="message">
+        var testData = [
+            {
+                id: '2',
+                sender: {
+                    name: '陈文军',
+                    avatar: '/image/avatar/test/test_2.png',
+                },
+                answerID: '1',
+                content: '自定义异常一般适用于大工程  所以对我等菜鸟来说  很少能见到   所以这一章只是了解就行',
+                time:"一天前",
+            },
+        ]
+        function messageRemove(){
+            $(".arrow").remove();
+            $("#messageBox").children().remove();
+            $("#coverLayer").remove();
+        }
+        function LinkHref(){
+            browserHistory.push({
+                pathname: "/home/classes/class",
+                state: {
+                    data:JSON.stringify(testData[0])
+                },
+            });
+            messageRemove();
+        }
+        const messageList = testData.map(function(message){
+            return(
+                <Row className="messageItem" type="flex" justify="start" align="middle" onClick={ LinkHref }>
+                    <Col span="4" className="mAvatar">
+                        <img src={message.sender.avatar} />
+                    </Col>
+                    <Col offset="2" span="14"  className="mContent">
+                        <p name="userName">{message.sender.name}</p>
+                        <p name="content" >{message.content.substring(0,25)+"..."}</p>
+                    </Col>
+                    <Col span="4" className="mTime">
+                        <p>{message.time}</p>
+                    </Col>
+                </Row>
+            );
+        });
+        return(
+            <div className="message">
                 <div className="messageHeader">
                     <h3>消息</h3>
                 </div>
-           </div>
-       );
+                <div className="messageContent">
+                    { messageList }
+                </div>
+            </div>
+        );
    }         
 });
 
@@ -125,6 +173,7 @@ const M_IndexToolBar = React.createClass({
         function btnSaerch(){
             window.location.href="/home/search";
         }
+        
         return (
             <Row type="flex" justify="center" align="middle" className="indexToolBar">
                 <Row type="flex" justify="space-around" align="middle" className="toolBar">

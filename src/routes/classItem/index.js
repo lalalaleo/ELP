@@ -43,6 +43,12 @@ class Class extends Component{
                 }
             },
         });
+        if(this.props.location.state.data!=null){
+            var data = JSON.parse(this.props.location.state.data);
+            this.commentsObjChange(data);
+            this.showModal();
+            this.props.location.state.data=null;
+        }
     }
     commnetsListChange(data){
         this.setState({
@@ -50,6 +56,7 @@ class Class extends Component{
         });
     }
     commentsObjChange(data){
+        console.log("data:",data);
         this.setState({
             answerID: data.id,
             answerName: data.sender.name,
@@ -139,7 +146,6 @@ class Class extends Component{
                         </Row>
                     </Col>
                 </Row>
-
                 <Row type="flex" justify="center" align="top">
                     <Col id="Class_layout_left" className="page_content_left">
 
