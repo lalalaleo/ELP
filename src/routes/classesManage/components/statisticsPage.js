@@ -223,8 +223,8 @@ class StatisticsPage extends Component {
             <Row id="StatisticsPage">
                 <Row id="StatisticsMenu" type="flex" justify="center">
                     <RadioGroup defaultValue={this.state.cId} size="large" onChange={this.handleChange}>
-                        <RadioButton value={1}>学习情况</RadioButton>
-                        <RadioButton value={2}>学员比例</RadioButton>
+                        <RadioButton value={1}>学员比例</RadioButton>
+                        <RadioButton value={2}>学习情况</RadioButton>
                     </RadioGroup>
                 </Row>
                 <Row>
