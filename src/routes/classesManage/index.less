@@ -1,0 +1,48 @@
+#ClassesManagePage {
+    width: 100px;
+
+    .classesManage_layout_item {
+        background-color: white;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,37,55,.05);
+        box-sizing: border-box;
+    }
+
+    #ClassesInfo{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+
+        .header {
+            .classesManage_layout_item;
+            margin-bottom: 20px;
+
+            img {
+                width: 100%;
+                height: 440px;
+                object-fit: cover;
+            }
+        }
+
+        .content {
+            .classesManage_layout_item;
+            padding: 20px;
+
+            p {
+                &[name="title"]{
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+                &[name="content"]{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    #ClassesContent{
+        .classesManage_layout_item;
+        padding: 20px;
+    }
+}

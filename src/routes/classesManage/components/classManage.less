@@ -1,0 +1,50 @@
+#ClassManage {
+    .classList {
+        padding: 20px 0px;
+        .container {
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            p {
+                &[name="title"]{
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+        }        
+    }
+
+    .classInfo {
+        padding: 20px;
+
+        .classInfo-header {
+            margin-bottom: 40px;
+            span {
+                font-size: 15px;
+                font-weight: bold;
+            }
+            input {
+                text-align: center;
+                -webkit-appearance: none;
+                font-size: 18px;
+            }
+        }
+
+        .classInfo-content {
+            margin-bottom: 40px;
+            .fileIcon {
+                img {
+                    width: 80%;
+                    margin-bottom: 20px;
+                }
+            }
+            .content {
+                textarea {
+                    -webkit-appearance: none;
+                    font-size: 15px;
+                }
+                p {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

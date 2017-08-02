@@ -1,0 +1,45 @@
+#content {
+    background-color: #f8f8f8;
+    width: 100%;
+    min-height: 100%;
+
+    .page {
+        width: 1000px;
+        min-height: 100%;
+        padding: 20px;
+
+        .page_content {
+            width: 100%;
+            
+            .page_content_left {
+                width:70%;
+                height: 100%;
+                padding-right: 10px;
+            }
+            
+            .page_content_right {
+                width:30%;
+                height: 100%;
+                padding-left: 10px;
+            }
+
+            .page_content_item {
+                padding: 20px;
+                width: 100%;
+                box-sizing: border-box;
+
+                .page_content_item_title {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    #page {
+        .page;
+    }
+    #m_page{
+        .page;
+        padding: 0;
+    }
+}

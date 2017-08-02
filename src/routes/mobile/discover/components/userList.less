@@ -1,0 +1,35 @@
+.userItem {
+    width: 21%;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 30px;
+
+    &:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 255, 0.25);
+    }
+
+    img {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        margin-bottom: 10px;
+    }
+    p{
+        width: 80%;
+        word-break:break-all;
+        &[name='name']{
+            text-align: center;
+            color: rgba(0, 0, 0, 0.65);
+            font-size: 16px;
+        }
+        &[name='department']{
+            text-align: center;
+            color: rgba(0, 0, 0, 0.87);
+            font-size: 14px;
+        }
+    }
+}

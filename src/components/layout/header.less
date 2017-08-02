@@ -1,0 +1,179 @@
+
+@indexToolBarHeight:64px;
+@segmentCtrlHeight:48px;
+
+.indexToolBar {
+    width: 100%;
+    height: @indexToolBarHeight;
+    background-color: #fff;
+    
+    .toolBar {
+        height: 100%;
+        width: 1000px;
+        max-width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .header_logo {
+        height: 32px;
+        img {
+            height: 32px;
+        }
+        span {
+            font-size: 20px;
+            text-transform: uppercase;
+            color: rgba(0,0,0,0.6);
+            margin-left: 20px;
+        }
+    }
+    
+    .search {
+        input {
+            width: 80%;
+            max-width: 300px;
+            -webkit-appearance: none;
+        }
+        button {
+            width: 40px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 0;
+        }
+    }
+    #messageIcon {
+        width: 46px;
+        right: 46px;
+        position: absolute;
+    }
+    #searchIcon {
+        width: 46px;
+        right: 46+46px;
+        position: absolute;
+    }
+    .arrow {
+        transform:rotate(-45deg);
+        background-color: white;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        left: 8px;
+        margin-top: 11px;
+        border-top:1px solid rgba(0,0,0,0.1);
+        border-right:1px solid rgba(0,0,0,0.1);
+        z-index: 201;
+    }
+    .avatar {
+        margin-right: 16px;
+        img {
+            width: 100%;
+            border-radius: 20px; 
+        }
+    }
+    #messageBox {
+        z-index: 200;
+        .message {
+            width: 100%;
+            height: 300px;
+            // background-color: white;
+            background-color: #f8f8f8;
+            position: absolute;
+            top: 18px;
+            border: 1px solid #e7eaf1;
+            border-radius: 4px;
+            box-shadow: 0 5px 20px rgba(0,34,77,.1);
+            
+            .messageHeader {
+            background-color: white;                
+                box-shadow: 0 1px 1px rgba(0,34,77,.05);
+                h3 {
+                    font-size: 16px;
+                    text-align: center;
+                    color: rgba(0,0,0,0.4);
+                    line-height: 30px;
+                }
+            }
+            .messageContent {
+                padding: 5px;
+                
+                .messageItem {
+                    background-color: white;                                    
+                    box-shadow: 0 0 5px rgba(0,34,77,.1);
+                    padding: 5px;
+                    color: rgba(0,0,0,0.87);
+                    &:hover {
+                        background-color: rgba(0, 180, 255, 0.1);
+                        color: rgba(0,0,0,0.7);                        
+                    }
+                    .mAvatar {
+                        img {
+                            width: 100%;
+                            border-radius: 999px;
+                        }
+                    }
+                    .mContent {
+                        p {
+                            &[name="userName"]{
+                                font-size: 13px;
+                                margin-bottom: 3px;
+                            }
+                            &[name="content"]{
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                    .mTime {
+                        p {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.segmentCtrl {
+    width: 100%;
+    // height: @segmentCtrlHeight;
+    background-color: white;
+    .segmentCtrlBar {
+        width: 1000px;
+        max-width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        .ant-radio-button-wrapper {
+            color:#108ee9;
+            border-color: #108ee9;
+        }
+
+        .ant-radio-button-wrapper-checked {
+            color:white;
+            background-color: #108ee9;
+        }
+    }
+}
+
+.hd {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    // box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
+}
+
+.vhd {
+    width: 100%;
+    height: @indexToolBarHeight ;
+}
+
+#coverLayer {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}

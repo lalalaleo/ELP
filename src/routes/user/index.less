@@ -1,0 +1,185 @@
+#UserPage {
+    width: 100%;
+
+    .user_layout_item {
+        background-color: white;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,37,55,.05);
+        box-sizing: border-box;
+    }
+    #ProfileHeader{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+
+        #ProfileCard {
+            margin-bottom: 20px;
+            div {
+                .user_layout_item;
+                padding: 40px;
+
+                img {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 999;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    &[name='userName'] {
+                        font-size: 32px;
+                        font-weight: bold;
+                        color: rgba(0,0,0,.87);
+                        margin-bottom: 10px;
+                    }
+                    &[name='department'] {
+                        font-size: 15px;
+                        color: rgba(0,0,0,.87);
+                    }
+                }
+            }
+        }
+        #ProfileInfo {            
+            .profileInfoItem {
+                padding-left: 10px;
+                padding-right: 10px;
+                &:first-child{
+                    padding-left: 0;
+                }
+                &:last-child{
+                    padding-right: 0;
+                }
+                div {
+                    .user_layout_item;
+                    padding: 20px;
+                    text-align: center;
+
+                    i {
+                        &[name="icon"]{
+                            font-size: 25px;
+                            margin-right: 16px;
+                        }
+                    }
+                    span {
+                        font-size: 20px;
+                        letter-spacing: 3px;
+                    }
+                }
+            }
+
+            .studyClassesNum {
+                .profileInfoItem;
+                i {
+                    &[name="icon"]{
+                        color: skyblue;
+                    }
+                }
+            }
+            .studyClassNum {
+                .profileInfoItem;
+                i {
+                    &[name="icon"]{
+                        color: gold;
+                    }
+                }
+            }
+            .studyClassesTime {
+                .profileInfoItem;
+                i {
+                    &[name="icon"]{
+                        color: pink;
+                    }
+                }
+            }
+            .commentNum {
+                .profileInfoItem;
+                i {
+                    &[name="icon"]{
+                        color: tomato;
+                    }
+                }
+            }
+            
+        }
+    }
+    #ProfileContent {
+        #ProfileActivityChart{
+            .user_layout_item;
+            padding: 20px;
+            width: 100%;
+            margin-bottom: 20px;
+            p {
+                &[name='title']{
+                    font-size: 15px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        #ProfileCommentHistory {
+            width: 60%;
+            padding-right: 10px;
+            
+            div {
+                &[name='container']{
+                    .user_layout_item;
+                    padding: 20px;
+                }
+            }
+
+            p{
+                &[name='title']{
+                    font-size: 15px;
+                }
+            }
+        }
+
+        #ProfileStudyClasses {
+            width: 40%;
+            padding-left: 10px;
+            div {
+                &[name='container']{
+                    .user_layout_item;
+                    padding: 20px 0;
+                }
+            }
+            p {
+                &[name='title']{
+                    font-size: 15px;
+                    margin-left: 20px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .profileStudyClassesItem {
+                position: relative;
+                padding: 15px 20px;
+                &:hover {
+                    background-color: rgba(0,180,240,0.1);
+                }
+
+                &:not(:nth-child(2)):after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    display: block;
+                    border-bottom: 1px solid #f0f2f7;
+                    content: "";
+                }
+
+                img {
+                    width: 100px;
+                    height: 60px;
+                    margin-right: 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 3px rgba(0,0,0,.1)
+                }
+                span {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

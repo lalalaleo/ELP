@@ -1,0 +1,102 @@
+#Classes {
+
+    .classes_layout_item {
+        width: 100%;
+        background-color: white;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,37,55,.05);
+        margin-bottom: 20px;
+    }
+
+    #Classes_cover {
+        .classes_layout_item;
+        padding: 0;
+        height: 440px;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+    }
+
+    #Classes_info {
+        .classes_layout_item;
+
+        h2 {
+            margin-bottom: 10px;
+        }
+    }
+    
+    #Classes_layout_left {
+
+        #Classes_history {
+            .classes_layout_item;
+
+            span {
+                font-size: 14px;
+
+                @marginRight : 10px;
+
+                &[name="s1"] {
+                    color: rgba(0, 0, 0, 0.5);
+                    margin-right: @marginRight;
+                }
+                &[name="s2"] {
+                    font-weight: bold;
+                    margin-right: @marginRight;
+                }
+                &[name="s3"] {
+                    margin-right: @marginRight;
+                }
+                &[name="s4"] {
+                    color: #108ee9;
+                    margin-right: @marginRight;
+                }
+            }
+        }
+
+        #Classes_students {
+            .classes_layout_item;
+
+            .class_students_item{
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 999px;
+                }
+                h4 {
+                    text-align: center;
+                }
+                p {
+                    text-align: center;
+                }
+            }
+        }
+
+        #Classes_correlation {
+            .classes_layout_item;
+
+            .class_correlation_item {
+                img {
+                    width: 100%;
+                    border-radius: 2px;
+                }
+                h4 {
+                    font-size: 14px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+   
+    #Classes_layout_right {
+         
+        #Classes_item_list {
+            .classes_layout_item;
+        }
+    }
+
+}
+

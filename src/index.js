@@ -1,17 +1,20 @@
-import $ from 'jquery';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './themes/index.css';
-import { DatePicker } from 'antd';
+import dva from 'dva';
+import './themes/index.less';
+import { browserHistory } from 'dva/router';
 
-function App() {
-  return (
-    <div style={{ margin: 100 }}>
-      <h1>AntDesign Demo</h1>
-      <hr /><br />
-      <DatePicker />
-    </div>
-  );
-}
+// 1. Initialize
+const app = dva({
+  history: browserHistory,
+});
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// 2. Plugins
+// app.use({});
+
+// 3. Model
+// app.model(require('./models/example'));
+
+// 4. Router
+app.router(require('./router'));
+
+// 5. Start
+app.start('#root');
