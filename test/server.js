@@ -82,6 +82,11 @@ app.post('/midwayIsland/data',function(req, res) {
       		res.send(msg);
     	});
 	}
+	else if(req.body.type=='answerComment'){
+		testData.answerComment(req.body.answerID,req.body.content,function(msg){
+      		res.send(msg);
+    	});
+	}
 	else if(req.body.type=='search'){
 		testData.search(req.body.searchInfo,function(msg){
       		res.send(msg);

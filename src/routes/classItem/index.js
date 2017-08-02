@@ -1,18 +1,35 @@
 import $ from 'jquery'
-import React from 'react'
+import React, { Component } from 'react';
 import style from './index.less'
 
 import { Header,IndexToolBar } from '../../components/layout/header'
 import { Content } from '../../components/layout/content'
 import { Comments } from './components/comments'
 import { ClassList } from '../classes/components/classList'
-import { Icon, Menu, Row, Col, Input, Button, message } from 'antd'
+import { Icon, Menu, Row, Col, Input, Button, message, Modal } from 'antd'
 
 import PDFObject from '../../assets/pdfobject.min.js'
 import { Player } from 'video-react'
 import "../../assets/video-react.css"
-const Class = React.createClass({
-    componentDidMount:function(){
+
+
+class Class extends Component{
+    constructor(props){
+        super(props);
+        this.handleAnswerComment = this.handleAnswerComment.bind(this);
+        this.commnetsListChange = this.commnetsListChange.bind(this);
+        this.commentsObjChange = this.commentsObjChange.bind(this);
+        this.shareComments = this.shareComments.bind(this);
+        this.answerComment = this.answerComment.bind(this);
+        this.state={
+            answerID:"",
+            answerName:"",
+            answerContent:"",
+            commnetsList:[],
+            visible: false
+        };
+    }
+    componentDidMount(){
         var commnetsListChange = this.commnetsListChange;
         $.ajax({
             type: "post",
@@ -26,18 +43,20 @@ const Class = React.createClass({
                 }
             },
         });
-    },
-    getInitialState: function(){
-        return{
-            commnetsList:[],
-        }
-    },
-    commnetsListChange: function(data){
+    }
+    commnetsListChange(data){
         this.setState({
             commnetsList:data
         });
-    },
-    shareComments: function(data){
+    }
+    commentsObjChange(data){
+        this.setState({
+            answerID: data.id,
+            answerName: data.sender.name,
+            answerContent: data.content,
+        });
+    }
+    shareComments(){
         var commnetsListChange = this.commnetsListChange;
         $.ajax({
             type: "post",
@@ -54,39 +73,48 @@ const Class = React.createClass({
                 }
             },
         });
-    },
-    render: function(){
-        // $("#page_content").ready(function(){
-        //     PDFObject.embed("/files/test.pdf", "#Class_content",{width: "100%"});
-        //     $("#Class_content").append("<div><a id='btnscreen'></a></div>");
-        //     ReactDOM.render(<Icon type="arrows-alt" />,document.getElementById("btnscreen"));
-        //     $("#btnscreen").click(function(){
-        //         if($("#Class_content").width()<=1000){
-        //             $("#Class_content").css({
-        //                 "position": "fixed",
-        //                 "top":0,
-        //                 "left": 0,
-        //                 "z-index": 999,
-        //                 "height":"100%"
-        //             });
-        //             $("body").css({
-        //                 "overflow": "hidden"
-        //             });
-        //             ReactDOM.render(<Icon type="shrink" />,document.getElementById("btnscreen"));
-        //         }
-        //         else{
-        //             $("#Class_content").css({
-        //                 "position": "relative",
-        //                 "z-index": 10,
-        //                 "height": "540px"
-        //             });
-        //             $("body").css({
-        //                 "overflow": ""
-        //             });
-        //             ReactDOM.render(<Icon type="arrows-alt" />,document.getElementById("btnscreen"));
-        //         }
-        //     });
-        // });
+    }
+    answerComment(){
+        var commnetsListChange = this.commnetsListChange;
+        $.ajax({
+            type: "post",
+            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://192.168.100.192:8888/midwayIsland/data",
+            dataType: "JSON",
+            data: "type=answerComment&answerID="+this.state.answerID+"&content="+$("#AnswerTextArea").val(),
+            success: function(data){
+                console.log(data);
+                if(data.code==200){
+                    commnetsListChange(data.data.commentsList);
+                    $("#AnswerTextArea").val("");
+                    message.success('回复成功');
+                }
+            },
+        });
+    }
+    showModal = () => {
+        this.setState({
+            visible: true,
+        });
+    }
+    handleOk = (e) => {
+        this.answerComment();
+        this.setState({
+            visible: false,
+        });
+    }
+    handleCancel = (e) => {
+        console.log(e);
+        this.setState({
+            visible: false,
+        });
+    }
+    handleAnswerComment = (e) => {
+        
+        this.commentsObjChange(e);
+        this.showModal();
+    }
+    render(){
         return(
             <div id="Class" className="page_content">
                 <div id="Class_content" className="page_content_item">
@@ -134,7 +162,7 @@ const Class = React.createClass({
                                 </Row>
                         </Col>
                         <Col id="Class_comments" className="page_content_item">
-                            <Comments data={this.state.commnetsList} />
+                             <Comments data={this.state.commnetsList} handleAnswerComment={this.handleAnswerComment} /> 
                         </Col>
 
                     </Col>
@@ -146,11 +174,24 @@ const Class = React.createClass({
                         </div>
                     </Col>
                 </Row>
-                
-            </div>
 
+                <Modal
+                    title={"回复 "+this.state.answerName}
+                    visible={this.state.visible}
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                >
+                    <div id="AnswerModal">
+                        <div className="answerBox">
+                            <p>{this.state.answerContent}</p>
+                        </div>
+                        <Input id="AnswerTextArea" type="textarea" placeholder="写下你的评论" autosize={{ minRows: 3, maxRows: 8 }} />
+                    </div>
+                </Modal>
+            </div>
         );
     }
-});
+
+}
 
 export { Class }

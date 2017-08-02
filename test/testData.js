@@ -412,6 +412,22 @@ exports.shareComment = function(content,fn){
     arr.reverse();
     fn({code:200,result:'ok',data:{"commentsList":arr}});
 }
+exports.answerComment = function(answerID,content,fn){
+    var comment = {
+        sender: {
+            name: '林罡',
+            avatar: '/image/avatar/test/test_1.png',
+        },
+        time:"刚刚",
+    }
+    comment.id=(test_CommentsData.length+1)+"";
+    comment.content = content;
+    comment.answerID = answerID;
+    test_CommentsData.push(comment);
+    var arr = test_CommentsData.slice();
+    arr.reverse();
+    fn({code:200,result:'ok',data:{"commentsList":arr}});
+}
 exports.search = function(searchInfo,fn){
     var arr = test_ClassesData.concat(test_ClassesData2);
     var arr2 = [];

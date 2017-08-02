@@ -5,9 +5,11 @@ import { Icon, Menu, Row, Col, Input, Button } from 'antd'
 const Comments = React.createClass({
     render: function(){
         var allData = this.props.data;
+        var handleAnswerComment = this.props.handleAnswerComment;
+        // var comments = this;
         const CommentsList = this.props.data.map(function(comment){
             return(
-                <CommentItem data={ comment } allData={ allData } />
+                <CommentItem data={ comment } allData={ allData } handleAnswerComment={handleAnswerComment} />
             );
         });
         return(
@@ -68,7 +70,7 @@ const CommentItem = React.createClass({
                 </Row>
                 <Row type="flex" justify="end" align="bottom" className="class_comments_item_ft">
                     <Col><a name="report"><Icon type="flag" /><span>举报</span></a></Col>
-                    <Col><a name="answer"><Icon type="edit" /><span>回复</span></a></Col>
+                    <Col><a name="answer" onClick={()=>this.props.handleAnswerComment(this.props.data)}><Icon type="edit" /><span>回复</span></a></Col>
                 </Row>
             </div>
         );
