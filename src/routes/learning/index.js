@@ -25,7 +25,8 @@ class Learning extends Component {
         var getHotSearchData = this._hotSearchChange;
         $.ajax({
             type: "post",
-            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://127.0.0.1:8888/midwayIsland/data",
+            url: "http://192.168.0.8:8888/midwayIsland/data", 
             // url: "http://192.168.100.192:8888/midwayIsland/data",
             dataType: "JSON",
             data: "type=history",
@@ -39,7 +40,8 @@ class Learning extends Component {
         $.ajax({
             type: "post",
             // url: "http://183.246.18.202:9018/elpcon/viewrecommendcourse",
-            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://127.0.0.1:8888/midwayIsland/data",
+            url: "http://192.168.0.8:8888/midwayIsland/data", 
             // url: "http://192.168.100.192:8888/midwayIsland/data",
             dataType: "JSON",
             // data: "userId="+User.objectId,
@@ -54,7 +56,8 @@ class Learning extends Component {
         });
         $.ajax({
             type: "post",
-            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://127.0.0.1:8888/midwayIsland/data",
+            url: "http://192.168.0.8:8888/midwayIsland/data", 
             // url: "http://192.168.100.192:8888/midwayIsland/data",
             dataType: "JSON",
             data: "type=hotsearch",
