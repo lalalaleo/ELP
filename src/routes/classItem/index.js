@@ -33,7 +33,8 @@ class Class extends Component{
         var commnetsListChange = this.commnetsListChange;
         $.ajax({
             type: "post",
-            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://127.0.0.1:8888/midwayIsland/data",
+            url: "http://192.168.0.8:8888/midwayIsland/data", 
             // url: "http://192.168.100.192:8888/midwayIsland/data",
             dataType: "JSON",
             data: "type=commentsList",
@@ -67,7 +68,8 @@ class Class extends Component{
         var commnetsListChange = this.commnetsListChange;
         $.ajax({
             type: "post",
-            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://127.0.0.1:8888/midwayIsland/data",
+            url: "http://192.168.0.8:8888/midwayIsland/data", 
             // url: "http://192.168.100.192:8888/midwayIsland/data",
             dataType: "JSON",
             data: "type=shareComment&&content="+$("#commentTextArea").val(),
@@ -85,7 +87,8 @@ class Class extends Component{
         var commnetsListChange = this.commnetsListChange;
         $.ajax({
             type: "post",
-            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://127.0.0.1:8888/midwayIsland/data",
+            url: "http://192.168.0.8:8888/midwayIsland/data", 
             // url: "http://192.168.100.192:8888/midwayIsland/data",
             dataType: "JSON",
             data: "type=answerComment&answerID="+this.state.answerID+"&content="+$("#AnswerTextArea").val(),
