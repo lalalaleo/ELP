@@ -58,7 +58,8 @@ const Classes = React.createClass({
         var classListChange = this.classListChange;
         $.ajax({
             type: "post",
-            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://127.0.0.1:8888/midwayIsland/data",
+            url: "http://192.168.0.8:8888/midwayIsland/data",            
             // url: "http://192.168.100.192:8888/midwayIsland/data",
             dataType: "JSON",
             data: "type=classList4",
@@ -73,7 +74,8 @@ const Classes = React.createClass({
         var userListChange = this.userListChange;
         $.ajax({
             type: "post",
-            url: "http://127.0.0.1:8888/midwayIsland/data",
+            // url: "http://127.0.0.1:8888/midwayIsland/data",
+            url: "http://192.168.0.8:8888/midwayIsland/data", 
             // url: "http://192.168.100.192:8888/midwayIsland/data",
             dataType: "JSON",
             data: "type=userList4",
